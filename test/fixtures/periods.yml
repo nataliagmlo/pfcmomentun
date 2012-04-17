@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_time: 2012-04-17 13:20:54
+  end_time: 2012-04-17 13:20:54
+  counter: 1
+
+two:
+  start_time: 2012-04-17 13:20:54
+  end_time: 2012-04-17 13:20:54
+  counter: 1
