@@ -1,11 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  start_time: 2012-04-17 13:20:54
-  end_time: 2012-04-17 13:20:54
-  counter: 1
+  start_time: 2012-05-25 12:00:15
+  end_time: 2012-05-25 12:00:15
+  total_audience: 1
+  acceleration: 1.5
+  velocity: 1.5
+  total_mentions: 1
+  mean_time_between_mentions: MyString
+  float: MyString
 
 two:
-  start_time: 2012-04-17 13:20:54
-  end_time: 2012-04-17 13:20:54
-  counter: 1
+  start_time: 2012-05-25 12:00:15
+  end_time: 2012-05-25 12:00:15
+  total_audience: 1
+  acceleration: 1.5
+  velocity: 1.5
+  total_mentions: 1
+  mean_time_between_mentions: MyString
+  float: MyString

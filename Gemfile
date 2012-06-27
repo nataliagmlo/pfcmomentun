@@ -10,6 +10,15 @@ gem 'pg'
 gem 'execjs'
 gem 'therubyracer'
 
+gem 'em-http-request', "0.2.7", :require => 'em-http'
+gem 'em-websocket'
+gem 'redis'
+gem 'json'
+
+group :test, :development do
+	gem 'rspec'
+	gem "rspec-rails", "~> 2.0"
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

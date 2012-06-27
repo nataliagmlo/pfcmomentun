@@ -1,3 +1,3 @@
 class Period < ActiveRecord::Base
-  attr_accessible :counter, :end_time, :start_time
+  attr_accessible :acceleration, :end_time, :float, :mean_time_between_mentions, :start_time, :total_audience, :total_mentions, :velocity
 end

@@ -1,9 +1,9 @@
 class CreateVelocities < ActiveRecord::Migration
   def change
     create_table :velocities do |t|
-      t.float :average_velocity
-      t.float :average_acceleration
-      t.timestamp :date
+      t.float :velocity
+      t.float :acceleration
+      t.datetime :date
       t.integer :audience
 
       t.timestamps

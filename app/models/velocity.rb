@@ -1,3 +1,3 @@
 class Velocity < ActiveRecord::Base
-  attr_accessible :audience, :average_acceleration, :average_velocity, :date
+  attr_accessible :acceleration, :audience, :date, :velocity
 end
