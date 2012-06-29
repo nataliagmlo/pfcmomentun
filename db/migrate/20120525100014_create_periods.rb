@@ -1,6 +1,5 @@
 class CreatePeriods < ActiveRecord::Migration
   def change
-	drop_table :periods
     create_table :periods do |t|
       t.datetime :start_time
       t.datetime :end_time

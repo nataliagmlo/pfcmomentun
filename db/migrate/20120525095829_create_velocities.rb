@@ -1,6 +1,5 @@
 class CreateVelocities < ActiveRecord::Migration
   def change
-	drop_table :velocities
     create_table :velocities do |t|
       t.float :velocity
       t.float :acceleration
