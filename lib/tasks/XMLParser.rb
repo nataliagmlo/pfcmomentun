@@ -24,6 +24,7 @@ class XMLParser
 		u.utc = user["utc"]
 
 		u.save
+		puts u.name
 	end
 
 	def parse_users_mentions users
@@ -32,8 +33,6 @@ class XMLParser
 			u.name = item["name"]
 
 			u.save
-
-			puts u.name
 
 			# calcular velocidad y acceleración
 		end
@@ -56,7 +55,7 @@ class XMLParser
 			unless users == nil
 				parse_users_mentions users
 			end
-		
+			
 		end
 
 	end

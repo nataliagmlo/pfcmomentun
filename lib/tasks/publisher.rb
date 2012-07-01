@@ -14,7 +14,7 @@ data = {"user" => 'pepito'}
 loop do
     for i in (0..9)
 
-    	redis.publish 'ws', data.merge('msg' => @pg.generate(i)).to_json
-    	sleep 10
+    	redis.publish 'ws', @pg.generate(i)
+    	sleep 5
 	end
 end
