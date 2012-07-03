@@ -7,8 +7,7 @@ class CreatePeriods < ActiveRecord::Migration
       t.float :acceleration
       t.float :velocity
       t.integer :total_mentions
-      t.string :mean_time_between_mentions
-      t.string :float
+      t.float :mean_time_mentions
 
       t.timestamps
     end

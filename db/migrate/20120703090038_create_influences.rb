@@ -1,6 +1,6 @@
-class CreateVelocities < ActiveRecord::Migration
+class CreateInfluences < ActiveRecord::Migration
   def change
-    create_table :velocities do |t|
+    create_table :influences do |t|
       t.float :velocity
       t.float :acceleration
       t.datetime :date

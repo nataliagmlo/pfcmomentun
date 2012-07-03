@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613105228) do
+ActiveRecord::Schema.define(:version => 20120703091740) do
+
+  create_table "influences", :force => true do |t|
+    t.float    "velocity"
+    t.float    "acceleration"
+    t.datetime "date"
+    t.integer  "audience"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "periods", :force => true do |t|
     t.datetime "start_time"
@@ -20,10 +29,9 @@ ActiveRecord::Schema.define(:version => 20120613105228) do
     t.float    "acceleration"
     t.float    "velocity"
     t.integer  "total_mentions"
-    t.string   "mean_time_between_mentions"
-    t.string   "float"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.float    "mean_time_mentions"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -42,16 +50,6 @@ ActiveRecord::Schema.define(:version => 20120613105228) do
     t.string   "profile"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "velocities", :force => true do |t|
-    t.float    "velocity"
-    t.float    "acceleration"
-    t.datetime "date"
-    t.integer  "audience"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "user_id"
   end
 
 end
