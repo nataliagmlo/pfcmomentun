@@ -14,6 +14,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :subscriptions
       t.integer :postings
       t.string :profile
+      t.datetime :last_mention_at
 
       t.timestamps
     end

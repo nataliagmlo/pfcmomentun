@@ -4,10 +4,9 @@ class CreatePeriods < ActiveRecord::Migration
       t.datetime :start_time
       t.datetime :end_time
       t.integer :total_audience
-      t.float :acceleration
-      t.float :velocity
       t.integer :total_mentions
-      t.float :mean_time_mentions
+      t.integer :total_users
+      t.integer :users_with_subscribers
 
       t.timestamps
     end

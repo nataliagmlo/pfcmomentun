@@ -27,14 +27,18 @@ class XMLParser
 		puts u.name
 	end
 
-	def parse_users_mentions users
+	def parse_users_mentions users, date_tweet
+		users_mentions = []
 		users.each do |item|
 			u = User.find_or_create_by_user_id item["id"]
 			u.name = item["name"]
 
 			u.save
 
-			# calcular velocidad y acceleración
+			users_mentions << u
+
+			m = Momentum.new
+			m.calculate_influences users_mentions, date_tweet
 		end
 	end
 
@@ -53,7 +57,7 @@ class XMLParser
 
 			users = status["to_users"]
 			unless users == nil
-				parse_users_mentions users
+				parse_users_mentions users, status["date"]
 			end
 			
 		end
