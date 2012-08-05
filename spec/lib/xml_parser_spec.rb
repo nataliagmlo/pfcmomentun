@@ -58,7 +58,7 @@ describe XMLParser do
 
       status = JSON.parse(msg)
 
-      p.parse_users_mentions status
+      p.parse_users_mentions status, "Wed Jun 13 12:08:40 +0000 2012"
 
       user = User.find_by_user_id "555993471"
       user.should_not be_nil

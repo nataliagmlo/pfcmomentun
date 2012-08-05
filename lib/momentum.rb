@@ -1,11 +1,11 @@
-$KCODE = "u"
+
 require 'rubygems'
 require 'time'
 require 'pg'
 
-require '../app/models/period.rb'
-require '../app/models/user.rb'
-require '../app/models/velocity.rb'
+require_relative '../app/models/period.rb'
+require_relative '../app/models/user.rb'
+require_relative '../app/models/influence.rb'
 
 
 class Momentum
@@ -36,7 +36,7 @@ class Momentum
 		
 		p = Period.find_previous(previous_hour)
 
-		if p.first == nill
+		if p.first == nil
 			p = Period.find_another_previous(previous_hour)
 		end
 
@@ -58,8 +58,8 @@ class Momentum
 			# If it's too hard (Phi too small because each user got few mentions or had a lot of subscribers to get the mentions) you could have merit even having less mentions or more followers
 			phi = average_mentions_per_hour / average_subscribers
 
-			puts "mentions: #{average_mentions}"
-			puts "users: #{total_users}"
+			puts "mentions: #{average_mentions_per_hour}"
+			puts "users: #{users_per_hour}"
 			puts "subscribers: #{average_subscribers}"
 			puts "phi: #{phi}"
 
@@ -71,7 +71,7 @@ class Momentum
 
 			users_mentions.each do |user|
 
-				unless user.subscribers == nill
+				unless user.subscribers == nil
 						
 
 					first_mention =  user.last_mention_at.strftime("%Y %b %d %H") < current_hour.strftime("%Y %b %d %H")
@@ -87,35 +87,44 @@ class Momentum
 					user_subscribers = user.subscribers
 					hours_since_last_mention = (current_hour - user.last_mention_at)/3600.0
 					
-					acceleration +=  1/(user_subscribers * hours_since_last_mention) - phi
-					velocity += user.acceleration * hours_since_last_mention
+					acceleration =  1/(user_subscribers * hours_since_last_mention) - phi
+					puts "acceleration" + acceleration.to_s
+					velocity = acceleration * hours_since_last_mention
+					puts "velocity" + velocity.to_s
 
-					i = Influence.new :acceleration => acceleration, :audience => user.subscribers, :date => current_hour, :velocity => velocity
+					i = Influence.new :acceleration => acceleration, :audience => user.subscribers, :date => current_hour, :velocity => velocity, :user_id => user.user_id
 
 					i.save
+					puts "Inlfluencia calculada"
 
 					# And save it
 					user.last_mention_at = current_hour
 					user.save
+					puts "usuario actualizado"
 				end
 
 			end
 		end
 
 		# We get the current report and save it
-		current_period_report = Period.find(current_hour).first
+		current_period_report = Period.find_previous(current_hour).first
+		puts current_period_report
 
-		if current_period_report == nill 
+		if current_period_report == nil
 						
 			current_period_report = Period.new(:start_time => Time.new(y,m,d, h, 00, 00, z), :end_time => Time.new(y,m,d, h, 59, 59, z))
-		end
+			current_period_report.total_mentions = mentions
+			current_period_report.total_audience = subscribers
+			current_period_report.total_users = new_mentioned_users
+			current_period_report.users_with_subscribers = new_users_with_subscribers
+		else
 			current_period_report.total_mentions += mentions
 			current_period_report.total_audience += subscribers
 			current_period_report.total_users += new_mentioned_users
 			current_period_report.users_with_subscribers += new_users_with_subscribers
-
+		end
 			current_period_report.save
-		
+		puts "periodo actualizado"
 
 	rescue Exception => ex
 		puts "Momentum: #{ex}"

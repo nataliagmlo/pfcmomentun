@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727090307) do
+ActiveRecord::Schema.define(:version => 20120805171351) do
 
   create_table "influences", :force => true do |t|
     t.float    "velocity"

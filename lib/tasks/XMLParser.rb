@@ -2,6 +2,8 @@
 require 'rexml/document'
 require 'pg'
 require 'json'
+require_relative '../momentum'
+require_relative '../../app/models/user'
 
 include REXML
 
