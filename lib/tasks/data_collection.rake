@@ -1,6 +1,6 @@
 require './lib/tasks/websocket-client'
 
 
-task :default do
+task :websocket_client do
 	c = Client.new
 end

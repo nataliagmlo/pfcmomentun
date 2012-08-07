@@ -8,12 +8,12 @@
  
 require 'rubygems'
 require 'em-http'
-require_relative './XMLParser'
+require_relative './USMFParser'
  
 class Client
   
   def initialize 
-    parser = XMLParser.new
+    parser = USMFParser.new
    
     EventMachine.run do
      

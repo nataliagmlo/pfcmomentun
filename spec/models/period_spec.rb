@@ -7,7 +7,7 @@ require 'time'
 describe Period do
 
 	describe "#find" do
-		date_tweet = "Wed Jun 13 12:08:40 +0000 2012"
+		date_tweet = "Wed Jun 15 12:08:40 +0000 2012"
   
 		y = date_tweet[26,4]
 		m = date_tweet[4,3]
@@ -29,12 +29,20 @@ describe Period do
 		t2 = t2 - 6.hour	
 
 		p = Period.new(:start_time => t1 , :end_time => t2 )
+		p.total_audience = 0
+		p.total_mentions = 0
+		p.total_users = 0
+		p.users_with_subscribers = 0
 		p.save
 
 
 		t1 = t1 + 1.hour
 		t2 = t2 + 1.hour
 		pf = Period.new(:start_time => t1 , :end_time => t2 )
+		pf.total_audience = 0
+		pf.total_mentions = 0
+		pf.total_users = 0
+		pf.users_with_subscribers = 0
 		pf.save
 
 		it "find the period previous" do 

@@ -1,9 +1,6 @@
-
-require 'rexml/document'
 require 'pg'
-include REXML
 
-class Client::XmlParser
+class Client::USMFParser
 
 	def initialize
 

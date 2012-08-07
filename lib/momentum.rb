@@ -40,10 +40,13 @@ class Momentum
 			p = Period.find_another_previous(previous_hour)
 		end
 
-		if p.first != nil
-			previous_period_report = p.first
-		
+		puts p.first.to_s
 
+		if p.first != nil
+			puts "si hay periodo"
+
+			previous_period_report = p.first
+			puts previous_period_report.to_s
 			# Now, with twitter info we shoud be able to compute Phi. We need:
 			# The average number of mentions per hour (for now, the mentions in this period)
 			mentions_per_hour = previous_period_report.total_mentions
@@ -62,32 +65,33 @@ class Momentum
 			puts "users: #{users_per_hour}"
 			puts "subscribers: #{average_subscribers}"
 			puts "phi: #{phi}"
+		end
+		# variables to store how must we update the current period
+		subscribers = 0
+		mentions = users_mentions.count
+		new_mentioned_users = 0
+		new_users_with_subscribers = 0
 
-			# variables to store how must we update the current period
-			subscribers = 0
-			mentions = users_mentions.count
-			new_mentioned_users = 0
-			new_users_with_subscribers = 0
+		users_mentions.each do |user|
 
-			users_mentions.each do |user|
-
-				unless user.subscribers == nil
-						
-
-					first_mention =  user.last_mention_at.strftime("%Y %b %d %H") < current_hour.strftime("%Y %b %d %H")
-
-					# Now let's increment the period variables
-					subscribers += user.subscribers
-					new_mentioned_users += 1 if first_mention
+			unless user.subscribers == nil
 					
 
-					new_users_with_subscribers += 1 if first_mention
+				first_mention =  user.last_mention_at.strftime("%Y %b %d %H") < current_hour.strftime("%Y %b %d %H")
 
-					# We compute the new score for the user
-					user_subscribers = user.subscribers
-					hours_since_last_mention = (current_hour - user.last_mention_at)/3600.0
-					
-					acceleration =  1/(user_subscribers * hours_since_last_mention) - phi
+				# Now let's increment the period variables
+				subscribers += user.subscribers
+				new_mentioned_users += 1 if first_mention
+				
+
+				new_users_with_subscribers += 1 if first_mention
+
+				# We compute the new score for the user
+				user_subscribers = user.subscribers
+				hours_since_last_mention = (current_hour - user.last_mention_at)/3600.0
+				
+				if p.first != nil
+					acceleration =  1/(user_subscribers * hours_since_last_mention) - phi 
 					puts "acceleration" + acceleration.to_s
 					velocity = acceleration * hours_since_last_mention
 					puts "velocity" + velocity.to_s
@@ -96,19 +100,17 @@ class Momentum
 
 					i.save
 					puts "Inlfluencia calculada"
-
-					# And save it
-					user.last_mention_at = current_hour
-					user.save
-					puts "usuario actualizado"
 				end
-
 			end
+			user.last_mention_at = current_hour
+			user.save
+			puts "usuario actualizado"
+
 		end
+	
 
 		# We get the current report and save it
 		current_period_report = Period.find_previous(current_hour).first
-		puts current_period_report
 
 		if current_period_report == nil
 						

@@ -1,13 +1,10 @@
 
-require 'rexml/document'
 require 'pg'
 require 'json'
 require_relative '../momentum'
 require_relative '../../app/models/user'
 
-include REXML
-
-class XMLParser
+class USMFParser
 
 	def parse_tweet_creator user
 		u = User.find_or_create_by_user_id user["id"]
@@ -54,8 +51,6 @@ class XMLParser
 		unless status["user"] == nil
 			
 			parse_tweet_creator status["user"]
-			
-			#puts u
 
 			users = status["to_users"]
 			unless users == nil
