@@ -5,6 +5,10 @@
 class Influence < ActiveRecord::Base
   attr_accessible :acceleration, :audience, :date, :velocity, :user_id
 
+  scope :find_previous, lambda { |user|
+    {:conditions => ["user_id <= ?", user], :order => "date desc"}
+  }
+
   def to_s
     s = "Influence:"
     s += "\n\tuser_id: " + user_id.to_s
@@ -12,5 +16,6 @@ class Influence < ActiveRecord::Base
     s += "\n\tacceleration: " + acceleration.to_s 
     s += "\n\tvelocity: " + velocity.to_s
     s += "\n\taudience: " + audience.to_s 
+    s
   end
 end

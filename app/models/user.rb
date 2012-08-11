@@ -13,5 +13,6 @@ class User < ActiveRecord::Base
     s += "\n\tsubscribers: " + subscribers.to_s
     s += "\n\tsubscriptions: " + subscriptions.to_s
     s += "\n\tlast_mention_at: " + last_mention_at.to_s if last_mention_at!=nil
+    s
   end
 end

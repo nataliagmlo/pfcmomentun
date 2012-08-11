@@ -3,12 +3,12 @@
 #
 # Class for each hour representing the data necessary to calculate the algorithm "Momentum"
 class Period < ActiveRecord::Base
-  	attr_accessible :end_time, :start_time, :total_audience, :total_mentions, :total_users, :users_with_subscribers
+	attr_accessible :end_time, :start_time, :total_audience, :total_mentions, :total_users, :users_with_subscribers
 
-  	# Find the period in which time is between the beginning and end of period
-  	# @param previous_hour [DateTime] Time and date of the period to seek
-  	# @return [Array,Period] Periods that meet the condition
-  	scope :find_previous, lambda { |previous_hour|
+	# Find the period in which time is between the beginning and end of period
+	# @param previous_hour [DateTime] Time and date of the period to seek
+	# @return [Array,Period] Periods that meet the condition
+	scope :find_previous, lambda { |previous_hour|
 		{:conditions => ["start_time <= ? and end_time >= ?", previous_hour, previous_hour]}
 	}
 
