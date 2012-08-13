@@ -23,7 +23,6 @@ class USMFParser
 		u.utc = user["utc"]
 
 		u.save
-		puts u.name
 	end
 
 	def parse_users_mentions users, date_tweet

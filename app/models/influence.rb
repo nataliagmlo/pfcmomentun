@@ -6,7 +6,7 @@ class Influence < ActiveRecord::Base
   attr_accessible :acceleration, :audience, :date, :velocity, :user_id
 
   scope :find_previous, lambda { |user|
-    {:conditions => ["user_id <= ?", user], :order => "date desc"}
+    {:conditions => ["user_id = ?", user], :order => "date desc"}
   }
 
   def to_s

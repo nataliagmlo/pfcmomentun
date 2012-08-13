@@ -30,8 +30,6 @@ class Client
       end
      
       http.stream do |msg|
-        #puts "Recieved: #{msg}"
-
         parser.parser msg
 
       end

@@ -47,15 +47,14 @@ describe Period do
 
 		it "find the period previous" do 
 			previous_hour = Time.new(y,m,d, h, mn, s, z) - 2.hour
-			p= Period.find_previous(previous_hour)
+			p = Period.find_previous(previous_hour)
 			if p.first == nil
-				puts "find another previous"
 				previous_hour = previous_hour - 1.hour
 				p = Period.find_another_previous(previous_hour)
 			end
 			p1 = p.first
-			puts p1.start_time == pf.start_time
-			puts p1.end_time == pf.end_time
+			p1.start_time.should == pf.start_time
+			p1.end_time.should == pf.end_time
 		end
 	end
 

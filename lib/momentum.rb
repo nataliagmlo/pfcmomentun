@@ -40,13 +40,9 @@ class Momentum
 			p = Period.find_another_previous(previous_hour)
 		end
 
-		puts p.first.to_s
-
 		if p.first != nil
-			puts "si hay periodo"
 
 			previous_period_report = p.first
-			puts previous_period_report.to_s
 			# Now, with twitter info we shoud be able to compute Phi. We need:
 			# The average number of mentions per hour (for now, the mentions in this period)
 			mentions_per_hour = previous_period_report.total_mentions
@@ -61,10 +57,6 @@ class Momentum
 			# If it's too hard (Phi too small because each user got few mentions or had a lot of subscribers to get the mentions) you could have merit even having less mentions or more followers
 			phi = average_mentions_per_hour / average_subscribers
 
-			puts "mentions: #{average_mentions_per_hour}"
-			puts "users: #{users_per_hour}"
-			puts "subscribers: #{average_subscribers}"
-			puts "phi: #{phi}"
 		end
 		# variables to store how must we update the current period
 		subscribers = 0
@@ -73,18 +65,14 @@ class Momentum
 		new_users_with_subscribers = 0
 
 		users_mentions.each do |user|
-			puts "antes unless subscribers" + user.subscribers.to_s
+
 			unless user.subscribers == nil
-					
 
 				first_mention =  user.last_mention_at.strftime("%Y %b %d %H") < current_hour.strftime("%Y %b %d %H")
 
 				# Now let's increment the period variables
-				puts "subscribers anterior : " + subscribers.to_s
 				subscribers += user.subscribers
-				puts "subscribers posterior " + subscribers.to_s
 				new_mentioned_users += 1 if first_mention
-				
 
 				new_users_with_subscribers += 1 if first_mention
 
@@ -99,18 +87,11 @@ class Momentum
 					acceleration = previous_influence.acceleration
 					velocity = previous_influence.velocity
 				end
-				puts "hours " + hours_since_last_mention.to_s
 				if p.first != nil	
-					puts "subscribers * hours " + (user_subscribers.to_f * hours_since_last_mention).to_s
-					puts "\t1/ anterior " + (1/(user_subscribers.to_f * hours_since_last_mention)).to_s
 					acceleration += 1/(user_subscribers.to_f * hours_since_last_mention) - phi
-					puts "acceleration" + acceleration.to_s
-					
 					velocity += acceleration * hours_since_last_mention
-					puts "velocity" + velocity.to_s
-
+					
 					i = Influence.new :acceleration => acceleration, :audience => user.subscribers, :date => current_hour, :velocity => velocity, :user_id => user.user_id
-
 					i.save
 				end
 			end
