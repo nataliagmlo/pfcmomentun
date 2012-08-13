@@ -112,12 +112,10 @@ class Momentum
 					i = Influence.new :acceleration => acceleration, :audience => user.subscribers, :date => current_hour, :velocity => velocity, :user_id => user.user_id
 
 					i.save
-					puts "Inlfluencia calculada"
 				end
 			end
 			user.last_mention_at = current_hour
 			user.save
-			puts "usuario actualizado"
 
 		end
 	
@@ -139,7 +137,6 @@ class Momentum
 			current_period_report.users_with_subscribers += new_users_with_subscribers
 		end
 			current_period_report.save
-		puts "periodo actualizado"
 
 	rescue Exception => ex
 		puts "Momentum: #{ex}"
