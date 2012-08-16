@@ -1,0 +1,13 @@
+<ul>
+	Puede haber influencias
+	<% influences.each do |influence| %>
+		<li>
+			<%= influence.velocity %>, <%= influence.acceleration %>, 
+			<% if influence.user!=nill %>
+				<%=	influence.user.user_id %>, 
+				<%=	influence.user.name %>
+
+			<%	end %>
+		</li>
+	<% end %>
+</ul>

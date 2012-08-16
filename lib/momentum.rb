@@ -27,11 +27,12 @@ class Momentum
 	    mn= mn.to_i
 	    s= s.to_i
 
-
+	    
 
 		# We get the previous hourly report to get some variables such as the average number of mentions, followers, etc. and the current one so we fill it
 		current_hour = Time.new(y,m,d, h, mn, s, z)
-		
+		puts "\n \t" + date_tweet
+		puts current_hour.to_s
 		previous_hour = current_hour - 1.hour
 		
 		p = Period.find_previous(previous_hour)
@@ -39,10 +40,11 @@ class Momentum
 		if p.first == nil
 			p = Period.find_another_previous(previous_hour)
 		end
-
+		puts "hay periodo??"
 		if p.first != nil
 
 			previous_period_report = p.first
+			puts previous_period_report.to_s
 			# Now, with twitter info we shoud be able to compute Phi. We need:
 			# The average number of mentions per hour (for now, the mentions in this period)
 			mentions_per_hour = previous_period_report.total_mentions
@@ -56,6 +58,9 @@ class Momentum
 			# If it's too easy (Phi too large because each user got a lot of mentions or had few subscribers when mentioned) you should have a lot of mentions or few followers to have any merit
 			# If it's too hard (Phi too small because each user got few mentions or had a lot of subscribers to get the mentions) you could have merit even having less mentions or more followers
 			phi = average_mentions_per_hour / average_subscribers
+			puts "mentions_per_hour " + mentions_per_hour.to_s
+			puts "users_per_hour " + users_per_hour.to_s
+			puts "average_subscribers " + average_subscribers.to_s
 
 		end
 		# variables to store how must we update the current period
@@ -66,19 +71,21 @@ class Momentum
 
 		users_mentions.each do |user|
 
-			unless user.subscribers == nil
+			
+				first_mention = true
+				if user.last_mention_at != nil
+					first_mention =  user.last_mention_at.strftime("%Y %b %d %H") < current_hour.strftime("%Y %b %d %H")
+				end
+				
+				hours_since_last_mention = (current_hour - user.last_mention_at)/3600.0 if user.last_mention_at != nil
 
-				first_mention =  user.last_mention_at.strftime("%Y %b %d %H") < current_hour.strftime("%Y %b %d %H")
-
-				# Now let's increment the period variables
-				subscribers += user.subscribers
 				new_mentioned_users += 1 if first_mention
 
+			unless user.subscribers == nil
+				subscribers += user.subscribers
 				new_users_with_subscribers += 1 if first_mention
 
-				# We compute the new score for the user
-				user_subscribers = user.subscribers
-				hours_since_last_mention = (current_hour - user.last_mention_at)/3600.0
+				user_subscribers = user.subscribers		
  
 				previous_influence = Influence.find_previous(user.user_id).first
 				acceleration = 0
@@ -87,12 +94,18 @@ class Momentum
 					acceleration = previous_influence.acceleration
 					velocity = previous_influence.velocity
 				end
-				if p.first != nil	
+				if p.first != nil and user.last_mention_at != nil
+					puts "user.last_mention_at " + user.last_mention_at.to_s	
+					puts "user_subscribers " + user_subscribers.to_s
+					puts "hours_since_last_mention " + hours_since_last_mention.to_s
+					puts "phi " + phi.to_s
 					acceleration += 1/(user_subscribers.to_f * hours_since_last_mention) - phi
 					velocity += acceleration * hours_since_last_mention
 					
 					i = Influence.new :acceleration => acceleration, :audience => user.subscribers, :date => current_hour, :velocity => velocity, :user_id => user.user_id
 					i.save
+					puts "calculad influencia"
+					puts i.to_s
 				end
 			end
 			user.last_mention_at = current_hour
@@ -105,19 +118,21 @@ class Momentum
 		current_period_report = Period.find_previous(current_hour).first
 
 		if current_period_report == nil
-						
 			current_period_report = Period.new(:start_time => Time.new(y,m,d, h, 00, 00, z), :end_time => Time.new(y,m,d, h, 59, 59, z))
 			current_period_report.total_mentions = mentions
 			current_period_report.total_audience = subscribers
 			current_period_report.total_users = new_mentioned_users
 			current_period_report.users_with_subscribers = new_users_with_subscribers
+			puts "nuevo periodo"
 		else
 			current_period_report.total_mentions += mentions
 			current_period_report.total_audience += subscribers
 			current_period_report.total_users += new_mentioned_users
 			current_period_report.users_with_subscribers += new_users_with_subscribers
+			puts "actulizando perido existente"
 		end
 			current_period_report.save
+			puts current_period_report.to_s
 
 	rescue Exception => ex
 		puts "Momentum: #{ex}"

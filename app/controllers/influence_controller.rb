@@ -1,0 +1,2 @@
+class InfluenceController < ApplicationController
+end

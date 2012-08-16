@@ -7,7 +7,7 @@ require 'time'
 describe Period do
 
 	describe "#find" do
-		date_tweet = "Wed Jun 15 12:08:40 +0000 2012"
+		date_tweet = "Wed Jun 15 12:08:40 +0000 2014"
   
 		y = date_tweet[26,4]
 		m = date_tweet[4,3]

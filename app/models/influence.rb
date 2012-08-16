@@ -3,10 +3,15 @@
 #
 # Class that represents the estimated impact on a date for a user 
 class Influence < ActiveRecord::Base
-  attr_accessible :acceleration, :audience, :date, :velocity, :user_id
+  attr_accessible :acceleration, :audience, :date, :velocity
+  belongs_to :user
 
   scope :find_previous, lambda { |user|
     {:conditions => ["user_id = ?", user], :order => "date desc"}
+  }
+
+  scope :influential_users, lambda { |time|
+    {:conditions => ["date >= ?", time], :order => "velocity desc"}
   }
 
   def to_s
