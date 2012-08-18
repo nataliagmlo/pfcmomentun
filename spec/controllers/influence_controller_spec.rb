@@ -1,5 +1,5 @@
 require_relative '../spec_helper'
 
-describe InfluenceController do
+describe InfluencesController do
 
 end

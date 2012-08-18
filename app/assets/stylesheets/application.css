@@ -11,3 +11,31 @@
  *= require_self
  *= require_tree .
 */
+
+body {background-color: #808080; margin: 0; font-family: Helvetica,Arial,sans-serif; font-size: 0.9em;} 
+#cuerpo {width: 80%; 
+		margin:auto; 
+		background-color: white; 
+		padding: 2% 5%;
+		margin-bottom: 0%;
+		padding-bottom: 0%;
+	}
+.momentum {font-size: 1.5em; color: #006699; text-align: right; padding-right: 10%;}
+.momentum p {margin-top: 0%;}
+h1{
+	padding-left: 10%;
+    text-align: left;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0%;
+}
+img {vertical-align: middle;}
+.valor {}
+#pie {clear:both;
+	padding-top: 3%;
+	padding-bottom: 3%;
+    padding-top: 3%;
+    text-align: center;
+}
+#pie p {margin-bottom: 0%;}
+

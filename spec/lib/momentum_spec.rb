@@ -40,8 +40,8 @@ describe Momentum do
 
 	      	m.calculate_influences(users, "Wed Jun 13 12:08:40 +0000 2014")
 
-	      	i1 = Influence.find_previous("111111111").first
-	      	i2 = Influence.find_previous("222222222").first
+	      	i1 = Influence.find_previous(u1.id).first
+	      	i2 = Influence.find_previous(u2.id).first
 
 	      	i2.velocity.should > i1.velocity
 
@@ -80,8 +80,8 @@ describe Momentum do
 
 	      	m.calculate_influences(users, "Wed May 13 12:08:40 +0000 2014")
 
-	      	i1 = Influence.find_previous("333333333").first
-	      	i2 = Influence.find_previous("444444444").first
+	      	i1 = Influence.find_previous(u1.id).first
+	      	i2 = Influence.find_previous(u2.id).first
 	      	i2.velocity.should > i1.velocity
 
 	    end
@@ -124,8 +124,8 @@ describe Momentum do
 
 	      	m.calculate_influences(users, "Wed Jan 13 12:08:40 +0000 2014")
 	     
-	      	i1 = Influence.find_previous("555555555").first
-	      	i2 = Influence.find_previous("666666666").first
+	      	i1 = Influence.find_previous(u1.id).first
+	      	i2 = Influence.find_previous(u2.id).first
 	      	i2.velocity.should < i1.velocity
 
 	    end

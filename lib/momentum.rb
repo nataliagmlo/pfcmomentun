@@ -27,12 +27,8 @@ class Momentum
 	    mn= mn.to_i
 	    s= s.to_i
 
-	    
-
 		# We get the previous hourly report to get some variables such as the average number of mentions, followers, etc. and the current one so we fill it
 		current_hour = Time.new(y,m,d, h, mn, s, z)
-		puts "\n \t" + date_tweet
-		puts current_hour.to_s
 		previous_hour = current_hour - 1.hour
 		
 		p = Period.find_previous(previous_hour)
@@ -40,11 +36,9 @@ class Momentum
 		if p.first == nil
 			p = Period.find_another_previous(previous_hour)
 		end
-		puts "hay periodo??"
 		if p.first != nil
 
 			previous_period_report = p.first
-			puts previous_period_report.to_s
 			# Now, with twitter info we shoud be able to compute Phi. We need:
 			# The average number of mentions per hour (for now, the mentions in this period)
 			mentions_per_hour = previous_period_report.total_mentions
@@ -58,9 +52,6 @@ class Momentum
 			# If it's too easy (Phi too large because each user got a lot of mentions or had few subscribers when mentioned) you should have a lot of mentions or few followers to have any merit
 			# If it's too hard (Phi too small because each user got few mentions or had a lot of subscribers to get the mentions) you could have merit even having less mentions or more followers
 			phi = average_mentions_per_hour / average_subscribers
-			puts "mentions_per_hour " + mentions_per_hour.to_s
-			puts "users_per_hour " + users_per_hour.to_s
-			puts "average_subscribers " + average_subscribers.to_s
 
 		end
 		# variables to store how must we update the current period
@@ -68,9 +59,7 @@ class Momentum
 		mentions = users_mentions.count
 		new_mentioned_users = 0
 		new_users_with_subscribers = 0
-
 		users_mentions.each do |user|
-
 			
 				first_mention = true
 				if user.last_mention_at != nil
@@ -80,32 +69,27 @@ class Momentum
 				hours_since_last_mention = (current_hour - user.last_mention_at)/3600.0 if user.last_mention_at != nil
 
 				new_mentioned_users += 1 if first_mention
-
 			unless user.subscribers == nil
+				
 				subscribers += user.subscribers
 				new_users_with_subscribers += 1 if first_mention
 
 				user_subscribers = user.subscribers		
  
-				previous_influence = Influence.find_previous(user.user_id).first
+				previous_influence = user.previous_influence
 				acceleration = 0
 				velocity = 0
 				if previous_influence != nil
 					acceleration = previous_influence.acceleration
 					velocity = previous_influence.velocity
 				end
-				if p.first != nil and user.last_mention_at != nil
-					puts "user.last_mention_at " + user.last_mention_at.to_s	
-					puts "user_subscribers " + user_subscribers.to_s
-					puts "hours_since_last_mention " + hours_since_last_mention.to_s
-					puts "phi " + phi.to_s
+				if p.first != nil and user.last_mention_at != nil and hours_since_last_mention != 0.0 and user.subscribers > 0
 					acceleration += 1/(user_subscribers.to_f * hours_since_last_mention) - phi
 					velocity += acceleration * hours_since_last_mention
 					
-					i = Influence.new :acceleration => acceleration, :audience => user.subscribers, :date => current_hour, :velocity => velocity, :user_id => user.user_id
+					i = Influence.new :acceleration => acceleration, :audience => user.subscribers, :date => current_hour, :velocity => velocity, :user_id => user.id
 					i.save
-					puts "calculad influencia"
-					puts i.to_s
+					puts "calculate influence"
 				end
 			end
 			user.last_mention_at = current_hour
@@ -123,16 +107,13 @@ class Momentum
 			current_period_report.total_audience = subscribers
 			current_period_report.total_users = new_mentioned_users
 			current_period_report.users_with_subscribers = new_users_with_subscribers
-			puts "nuevo periodo"
 		else
 			current_period_report.total_mentions += mentions
 			current_period_report.total_audience += subscribers
 			current_period_report.total_users += new_mentioned_users
 			current_period_report.users_with_subscribers += new_users_with_subscribers
-			puts "actulizando perido existente"
 		end
 			current_period_report.save
-			puts current_period_report.to_s
 
 	rescue Exception => ex
 		puts "Momentum: #{ex}"

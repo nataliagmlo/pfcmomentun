@@ -1,3 +1,13 @@
-<h1>Home</h1>
 
-<%= render :partial => "listing", :locals => {:influences => @influences} %>
+<div class="columnas2 col1">
+	<h2>Usuarios más influyentes</h2>
+	<%= render :partial => "listing_top_Influence", :locals => {:influences => @top_influences} %>
+</div>
+<div class="columnas2 col2">
+	<h2>Usuarios con mayor variación de influyencia</h2>
+	<%= render :partial => "listing_acceleration", :locals => {:influences => @top_accelerations} %>
+</div>
+<div class="acc_neg">
+	<h2>Usuarios con mayor variación de influyencia NEGATIVA</h2>
+	<%= render :partial => "listing_acceleration", :locals => {:influences => @worst_accelerations} %>
+</div>

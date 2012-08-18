@@ -1,0 +1,23 @@
+<h1>Detalle usuario</h1>
+<ul>
+	<li> User id: <%= @user.user_id %> </li>
+	<li> User name:	<%=	@user.name %>, <img src="<%= @user.avatar %>" alt="Avatar"/> </li>
+	<li> User real name: <%= @user.real_name %> </li>
+	<li> Última influencia
+		<ul>
+			<li>
+				<%= link_to @influence.date, influence_path(@influence) %>: Velocidad= 
+				<%= @influence.velocity %>
+			</li>
+		</ul>
+	</li>
+	<li>Evolución influencia</li>
+		<ul>
+			<% @influences.each do |influence| %>
+				<li>
+					<%= link_to influence.date, influence_path(influence) %>: Velocidad= 
+					<%= influence.velocity %>
+				</li>
+			<% end %>
+		</ul>
+</ul>

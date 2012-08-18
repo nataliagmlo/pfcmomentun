@@ -6,8 +6,7 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
-gem 'yard'
+gem 'kermit'
 
 gem 'execjs'
 gem 'therubyracer'
@@ -18,6 +17,7 @@ gem 'redis'
 gem 'json'
 
 group :test, :development do
+	gem 'yard'
 	gem 'rspec'
 	gem "rspec-rails", "~> 2.0"
 end

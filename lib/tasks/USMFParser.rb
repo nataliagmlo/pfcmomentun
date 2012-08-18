@@ -34,10 +34,9 @@ class USMFParser
 			u.save
 
 			users_mentions << u
-
+		end
 			m = Momentum.new
 			m.calculate_influences users_mentions, date_tweet
-		end
 	end
 
 	def parser msg
@@ -48,6 +47,7 @@ class USMFParser
 		end
 		
 		unless status["user"] == nil
+			puts "id tweet " + status["id"] 
 			
 			parse_tweet_creator status["user"]
 

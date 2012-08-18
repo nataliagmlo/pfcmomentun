@@ -4,6 +4,12 @@
 # Class that represents all the data can be stored in a user
 class User < ActiveRecord::Base
   attr_accessible :avatar, :description, :geo, :language, :last_mention_at, :location, :name, :postings, :profile, :real_name, :subscribers, :subscriptions, :user_id, :utc
+  has_many :influences
+
+  def previous_influence
+    i = Influence.find_previous(id).first
+    i
+  end
 
   def to_s
     s = "User:"
@@ -14,5 +20,9 @@ class User < ActiveRecord::Base
     s += "\n\tsubscriptions: " + subscriptions.to_s
     s += "\n\tlast_mention_at: " + last_mention_at.to_s if last_mention_at!=nil
     s
+  end
+
+  def equals user
+    return id == user.id
   end
 end

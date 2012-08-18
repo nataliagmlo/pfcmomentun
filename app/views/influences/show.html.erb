@@ -1,0 +1,10 @@
+<h1>Detalle influencia</h1>
+
+<ul>
+	
+	<li> Velocidad: <%= @influence.velocity %> </li>
+	<li> Aceleración: <%= @influence.acceleration %> </li>
+	<li> Fecha: <%= @influence.date %> </li>
+	<li> <%= (link_to @influence.user.name, user_path(@influence.user)) unless @influence.user.nil? %> </li>
+	<li> Seguidores: <%= @influence.audience %> </li>
+</ul>

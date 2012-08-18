@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ES" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
-  <title>Momentun</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  	<title>Momentun</title>
+  	<%= stylesheet_link_tag    "application", :media => "all" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="cuerpo">
+		<div id="cabecera"> 
+			<div class="momentum">
+				<h1>Momentum</h1> 
+				<p>Consulta tu influencia, ¿cuán influyente eres?</p>
+			</div>
 
-<%= yield %>
+		</div>
 
+		<%= yield %>
+		<div id="pie">
+			<p>
+				<span class="escuela">Escuela de Ingeniería Informática</span>
+				<img src="/assets/logo_euitio.png" alt="Logo oficial de la Escuela de Ingeniería Informática" />
+				<span class="uniovi">Universidad de Oviedo</span>
+				<img src="/assets/logo_uniovi.png" alt="Logo oficial de la Universidad de Oviedo" />
+			</p>
+		</div>
+	</div>
 </body>
 </html>
