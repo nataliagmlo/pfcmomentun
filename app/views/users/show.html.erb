@@ -1,23 +1,24 @@
-<h1>Detalle usuario</h1>
-<ul>
-	<li> User id: <%= @user.user_id %> </li>
-	<li> User name:	<%=	@user.name %>, <img src="<%= @user.avatar %>" alt="Avatar"/> </li>
-	<li> User real name: <%= @user.real_name %> </li>
-	<li> Última influencia
-		<ul>
-			<li>
-				<%= link_to @influence.date, influence_path(@influence) %>: Velocidad= 
-				<%= @influence.velocity %>
-			</li>
-		</ul>
-	</li>
-	<li>Evolución influencia</li>
-		<ul>
+
+	
+	<h2>Usuario:	<%=	@user.name %></h2>
+	<div class="usuario">
+		<p class="ficha">Nombre: <%= @user.real_name %></p>
+		<p class="ficha"><%= link_to "Última influencia:", influence_path(@influence) %> 
+			<span class="verde negrita"><%= format("%.2f", (@influence.velocity*100)) %> </span></p>
+		<p class="ficha">Followers: <%= @user.subscribers %> </p>
+		<p class="ficha">Following: <%= @user.subscriptions %> </p>
+		<p class="ficha"><img src="<%= @user.avatar %>" alt="Avatar"/></p>
+		<p class="ficha mencion">Última mención: <%= @user.last_mention_at %> </p>
+		<p class="ficha desc">Descripción: <%= @user.description %> </p>
+	</div>
+	<ul class="evolucion">
+		<li>Evolución influencia
+		<ol>
 			<% @influences.each do |influence| %>
 				<li>
-					<%= link_to influence.date, influence_path(influence) %>: Velocidad= 
-					<%= influence.velocity %>
+					<%= link_to format("%.2f", (influence.velocity*100)), influence_path(influence) %>
 				</li>
 			<% end %>
-		</ul>
-</ul>
+		</ol>
+		</li>
+	</ul>

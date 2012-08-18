@@ -3,7 +3,7 @@
 		<li>
 			<img src="<%= influence.user.avatar %>" alt="Avatar"/>
 			<%= (link_to influence.user.name, user_path(influence.user)) unless influence.user.nil? %> 
-			 <%= format("%.2f", (influence.acceleration*100)) %>
+			<!-- <%= format("%.2f", (influence.acceleration*100)) %>-->
 		</li>
 	<% end %>
 </ol>

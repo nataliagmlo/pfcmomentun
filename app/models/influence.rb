@@ -12,19 +12,19 @@ class Influence < ActiveRecord::Base
 
   scope :influential_users, lambda { 
     t = Time.now
-    t = t - 2.hour
+    t = t - 1.hour
     {:conditions => ["created_at >= ?", t], :order => "velocity desc"}
   }
 
   scope :good_acceleration_users, lambda { 
     t = Time.now
-    t = t - 2.hour
+    t = t - 1.hour
     {:conditions => ["created_at >= ?", t], :order => "acceleration desc"}
   }
 
   scope :bad_acceleration_users, lambda { 
     t = Time.now
-    t = t - 2.hour
+    t = t - 1.hour
     {:conditions => ["created_at >= ?", t], :order => "acceleration asc"}
   }
 
