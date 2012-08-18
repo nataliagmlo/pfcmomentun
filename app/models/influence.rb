@@ -13,19 +13,19 @@ class Influence < ActiveRecord::Base
   scope :influential_users, lambda { 
     t = Time.now
     t = t - 2.hour
-    {:conditions => ["date >= ?", t], :order => "velocity desc"}
+    {:conditions => ["created_at >= ?", t], :order => "velocity desc"}
   }
 
   scope :good_acceleration_users, lambda { 
     t = Time.now
     t = t - 2.hour
-    {:conditions => ["date >= ?", t], :order => "acceleration desc"}
+    {:conditions => ["created_at >= ?", t], :order => "acceleration desc"}
   }
 
   scope :bad_acceleration_users, lambda { 
     t = Time.now
     t = t - 2.hour
-    {:conditions => ["date >= ?", t], :order => "acceleration asc"}
+    {:conditions => ["created_at >= ?", t], :order => "acceleration asc"}
   }
 
   def to_s
