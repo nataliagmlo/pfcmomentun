@@ -14,7 +14,7 @@ twitter:
  streams: 1
  path: /1/statuses/filter.json
  track: #Keywords you want Twitter tracks and filter the Stream (one for each stream)
-  track1: a
+  track1: e
  login: KermitPFC
  pass: kermitkermit123123
  port: 443

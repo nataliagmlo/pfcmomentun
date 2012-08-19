@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   attr_accessible :avatar, :description, :geo, :language, :last_mention_at, :location, :name, :postings, :profile, :real_name, :subscribers, :subscriptions, :user_id, :utc
   has_many :influences
 
+  scope :name_like, lambda { |name| 
+    {:conditions => ["name => ?", name]}
+  }
+
   def previous_influence
     i = Influence.find_previous(id).first
     i

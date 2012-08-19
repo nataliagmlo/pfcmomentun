@@ -1,27 +1,9 @@
 
 	
-	<h2>Usuario:	<%=	@user1.name %></h2>
-	<div class="usuario">
-		<p class="ficha">Nombre: <span class="negrita"><%= @user1.real_name %></span></p>
-		<p class="ficha"><%= link_to "Última influencia:", influence_path(@influence1) %> 
-			<span class="verde negrita"><%= format("%.2f", (@influence1.velocity*100)) %></span></p>
-		<p class="ficha">Followers: <span class="negrita"><%= @user1.subscribers %></span></p>
-		<p class="ficha">Following: <span class="negrita"><%= @user1.subscriptions %></span></p>
-		<p class="ficha">Avatar: <img src="<%= @user1.avatar %>" alt="Avatar"/></p>
-		<p class="ficha mencion">Última mención: <span class="negrita"><%= @user1.last_mention_at %></span></p>
-		<p class="ficha desc">Descripción: <span class="negrita"><%= @user1.description %></span></p>
-	</div>
-	<h2>Usuario:	<%=	@user2.name %></h2>
-	<div class="usuario">
-		<p class="ficha">Nombre: <span class="negrita"><%= @user2.real_name %></span></p>
-		<p class="ficha"><%= link_to "Última influencia:", influence_path(@influence2) %> 
-			<span class="verde negrita"><%= format("%.2f", (@influence2.velocity*100)) %></span></p>
-		<p class="ficha">Followers: <span class="negrita"><%= @user2.subscribers %></span></p>
-		<p class="ficha">Following: <span class="negrita"><%= @user2.subscriptions %></span></p>
-		<p class="ficha">Avatar: <img src="<%= @user2.avatar %>" alt="Avatar"/></p>
-		<p class="ficha mencion">Última mención: <span class="negrita"><%= @user2.last_mention_at %></span></p>
-		<p class="ficha desc">Descripción: <span class="negrita"><%= @user2.description %></span></p>
-	</div>
+	<%= render :partial => "user_detail", :locals => {:user => @user1, :influence =>@influence1} %>
+
+	<%= render :partial => "user_detail", :locals => {:user => @user2, :influence =>@influence2} %>
+	
 	<% puntos ="" %>
 	<% pos = 1 %>
 	<% tam = @influences1.size %>

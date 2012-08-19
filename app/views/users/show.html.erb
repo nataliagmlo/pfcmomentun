@@ -2,15 +2,15 @@
 	<%= render :partial => "user_detail", :locals => {:user => @user, :influence =>@influence} %>
 
 
-	<% puntos ="" %>
+	<% puntos = "" %>
 	<% pos = 1 %>
 	<% tam = @influences.size %>
 	<% @influences.each do |influence| %>
 		<% puntos += format("%.2f", (influence.velocity*100)).to_s %>
 		<% if pos < tam %>
-			<% puntos += "," %>
+			<% puntos += ',' %>
 			<% pos += 1 %>
 		<% end %>
 	<% end %>
-	<% dir = "http://chart.apis.google.com/chart?cht=lc&chco=ff0000&chs=570x300&chd=t:"+puntos + "|-1&chdl="+ @user.name + "&chma=20,20,20,30|80,20&chxt=x,y&chxl=0:"+ @dates + "&chf=c,lg,0,FFE7C6,0,76A4FB,1|bg,s,EFEFEF&chtt=Evolución de la influencia" %>
+	<% dir = "http://chart.apis.google.com/chart?cht=lc&chco=ff0000&chs=570x300&chd=t:"+ puntos + "&chds=" + @axis_y_values[0] +","+ @axis_y_values[1] + "&chdl="+ @user.name + "&chma=20,20,20,30|80,20&chxt=x,y&chxl=0:"+ @dates + "|1:" + @axis_y_labels + "&chf=c,lg,0,FFE7C6,0,76A4FB,1|bg,s,EFEFEF&chtt=Evolución de la influencia" %>
 	<img class="center noFloat" src="<%= dir %>" alt="Evolución de la influencia datos: <%= puntos %>" />

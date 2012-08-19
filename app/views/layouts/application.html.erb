@@ -11,7 +11,12 @@
 	<div id="cuerpo">
 		<div id="cabecera"> 
 			<div class="momentum">
-				<h1><a href="/">Momentum</a></h1> 
+				<h1><a href="/">Momentum</a></h1>
+				<% form_tag users_path, :method => 'get' do %>
+					<%= label_tag ":search", "Nombre usuario "%>
+					<%= text_field_tag :search, params[:search] %>
+					<%= submit_tag "submit", :name => nil %>
+				<% end %>
 				<p>Consulta tu influencia, ¿cuán influyente eres?</p>
 			</div>
 

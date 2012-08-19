@@ -1,9 +1,9 @@
-<ol>
-	<% influences.each do |influence| %>
-		<li>
-			<img src="<%= influence.user.avatar %>" alt="Avatar"/>
-			<%= (link_to influence.user.name, user_path(influence.user)) unless influence.user.nil? %>
-			<span class="valor"> <%= format("%.2f", (influence.velocity*100)) %></span> 	 			
-		</li>
-	<% end %>
-</ol>
+			<ol>
+			<% influences.each do |influence| %>
+				<li>
+					<img src="<%= influence.user.avatar %>" alt="Avatar"/>
+					<%= (link_to influence.user.name, user_path(influence.user)) unless influence.user.nil? %>
+					<span class="valor"> <%= format("%.2f", (influence.velocity*100)) %></span> 	 			
+				</li>
+			<% end %>
+			</ol>
