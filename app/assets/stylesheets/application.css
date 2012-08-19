@@ -34,10 +34,12 @@ img {vertical-align: middle;}
 .valor {color: #008000;
     font-size: 1.9em;
     font-weight: bold;}
+img.center {display: block; margin: auto;}
 .verde {color: #008000;}
 .negrita{font-weight: bold;}
 .ficha{width: 25%; float: left; text-align: right;}
 .evolucion{clear: both; border: thin solid #DFDBD2;}
+.noFloat {clear: both;}
 #pie {clear:both;
 	padding-top: 3%;
 	padding-bottom: 3%;

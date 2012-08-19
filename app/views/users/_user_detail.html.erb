@@ -1,0 +1,11 @@
+	<h2>Usuario:	<%=	user.name %></h2>
+	<div class="usuario">
+		<p class="ficha">Nombre: <span class="negrita"><%= user.real_name %></span></p>
+		<p class="ficha"><%= link_to "Última influencia:", influence_path(influence) %> 
+			<span class="verde negrita"><%= format("%.2f", (influence.velocity*100)) %></span></p>
+		<p class="ficha">Followers: <span class="negrita"><%= user.subscribers %></span></p>
+		<p class="ficha">Following: <span class="negrita"><%= user.subscriptions %></span></p>
+		<p class="ficha">Avatar: <img src="<%= @user.avatar %>" alt="Avatar"/></p>
+		<p class="ficha mencion">Última mención: <span class="negrita"><%= user.last_mention_at %></span></p>
+		<p class="ficha desc">Descripción: <span class="negrita"><%= user.description %></span></p>
+	</div>
