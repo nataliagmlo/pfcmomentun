@@ -35,6 +35,7 @@ h1 a {color: #006699!important;}
     margin-top: 30px;
     padding: 15px;}
 fieldset {border: none;}
+input {width: 10em;}
 img {vertical-align: middle;}
 .valor {color: #008000;
     font-size: 2.2em;
@@ -45,6 +46,8 @@ img.center {display: block; margin: auto;}
 .ficha{width: 25%; float: left; text-align: right;}
 .evolucion{clear: both; border: thin solid #DFDBD2;}
 .noFloat {clear: both;}
+.fright{float: right;}
+.fleft{float: left;}
 .informacion {color: red;
     font-size: 1.2em;
     font-weight: bold;

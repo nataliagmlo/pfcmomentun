@@ -15,7 +15,7 @@
 				<div class="buscador">
 					<%= form_tag users_path, :method => 'get' do %>
 						<fieldset>
-							<%= label_tag :search, "@usuario"%>
+							<%= label_tag :search, "usuario"%>
 							<%= text_field_tag :search, params[:search] %>
 							<%= submit_tag "Buscar", :name => nil %>
 						</fieldset>
