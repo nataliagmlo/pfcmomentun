@@ -63,9 +63,9 @@ class UsersController < ApplicationController
 	def dates_for_axis influences
 		d = ""
 		size = influences.size
-		d += "|" + influences[0].date.strftime("%d %b")
-		d += "|" + influences[size/2].date.strftime("%d %b")
-		d += "|" + influences[size-1].date.strftime("%d %b")
+		d += "|" + influences[0].date.strftime("%d %b %H:%M")
+		d += "|" + influences[size/2].date.strftime("%d %b %H:%M")
+		d += "|" + influences[size-1].date.strftime("%d %b %H:%M")
 		d
 	end
 

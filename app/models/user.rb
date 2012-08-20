@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :influences
 
   scope :name_like, lambda { |name| 
-    {:conditions => ["name => ?", name]}
+    {:conditions => ["lower(name) = ?", name.downcase]}
   }
 
   def previous_influence

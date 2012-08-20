@@ -12,12 +12,16 @@
 		<div id="cabecera"> 
 			<div class="momentum">
 				<h1><a href="/">Momentum</a></h1>
-				<% form_tag users_path, :method => 'get' do %>
-					<%= label_tag :search, "Nombre usuario"%>
-					<%= text_field_tag :search, params[:search] %>
-					<%= submit_tag "Buscar", :name => nil %>
-				<% end %>
-				<p>Consulta tu influencia, ¿cuán influyente eres?</p>
+				<div class="buscador">
+					<%= form_tag users_path, :method => 'get' do %>
+						<fieldset>
+							<%= label_tag :search, "@usuario"%>
+							<%= text_field_tag :search, params[:search] %>
+							<%= submit_tag "Buscar", :name => nil %>
+						</fieldset>
+					<% end %>
+				</div>
+				<p class="noFloat">Consulta tu influencia, ¿cuán influyente eres?</p>
 			</div>
 
 		</div>

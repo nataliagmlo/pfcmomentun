@@ -14,8 +14,10 @@ class HomeController < ApplicationController
 		@user = params[:name]
 	end
 
-	def find_user
-		@user = User.find_by_name params["name"]
+	def show
+		@user = nil
+		@user = User.name_like params["search"]
+		@user = @user.first
 	    if @user!=nil
 	      redirect_to user_path(@user)
 	    else
