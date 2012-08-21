@@ -1,6 +1,6 @@
 # encoding: utf-8
 require_relative '../spec_helper'
-require_relative '../../lib/momentum'
+require_relative '../../lib/business/momentum'
 require_relative '../../app/models/period'
 require_relative '../../app/models/user'
 require_relative '../../app/models/influence'

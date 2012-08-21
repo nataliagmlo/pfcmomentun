@@ -4,7 +4,6 @@
 					<img src="assets/<%= arrow %>" alt="Flecha con sentido <%= arrow %>"/>
 					<img src="<%= influence.user.avatar %>" alt="Avatar"/>
 					<%= (link_to influence.user.name, user_path(influence.user)) unless influence.user.nil? %> 
-					<!-- <%= format("%.2f", (influence.acceleration)) %>-->
 				</li>
 			<% end %>
 			</ol>

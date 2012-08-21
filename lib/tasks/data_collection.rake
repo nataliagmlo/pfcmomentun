@@ -1,4 +1,4 @@
-require_relative './websocket-client'
+require_relative '../client/websocket-client'
 
 namespace :run do
 

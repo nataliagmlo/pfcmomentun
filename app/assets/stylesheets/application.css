@@ -13,7 +13,7 @@
 */
 
 body {background-color: #808080; margin: 0; font-family: Helvetica,Arial,sans-serif; font-size: 0.9em;} 
-#cuerpo {width: 80%; 
+#main {width: 80%; 
 		margin:auto; 
 		background-color: white; 
 		padding: 2% 5%;
@@ -31,34 +31,39 @@ h1{
     float: left;
 }
 h1 a {color: #006699!important;}
-.buscador{float: right;
+.search{float: right;
     margin-top: 30px;
-    padding: 15px;}
-fieldset {border: none;}
+    padding: 15px; padding-right: 0%;}
+fieldset {border: none; margin-right: 0%; padding-right: 0%;}
 input {width: 10em;}
 img {vertical-align: middle;}
-.valor {color: #008000;
+.influence {color: #008000;
     font-size: 2.2em;
     font-weight: bold;}
 img.center {display: block; margin: auto;}
-.verde {color: #008000;}
-.negrita{font-weight: bold;}
-.ficha{width: 25%; float: left; text-align: right;}
-.evolucion{clear: both; border: thin solid #DFDBD2;}
+.detail {font-size: 1.2em;}
+.mention {width:60%; text-align: left; padding-left: 7%;}
+/*.compare_to {float:right; margin: 0; padding: 0;}*/
+.green {color: #008000;}
+.bold{font-weight: bold;}
+.profile{width: 25%; float: left; text-align: right;}
+.desc {clear:both; width:100%; text-align: left; padding-left: 3%;}
+/*.evolution{clear: both; border: thin solid #DFDBD2;}*/
 .noFloat {clear: both;}
 .fright{float: right;}
 .fleft{float: left;}
-.informacion {color: red;
+.information {color: red;
     font-size: 1.2em;
     font-weight: bold;
     padding-top: 20px;
     text-align: center;}
-#pie {clear:both;
+#foot {clear:both;
 	padding-top: 3%;
     padding-top: 3%;
     text-align: center;
 }
-#pie p {border-top: thin dotted #909090;
+#foot p {border-top: thin dotted #909090;
     margin-bottom: 0;
     padding-top: 20px;}
+.date {text-align: right;}
 

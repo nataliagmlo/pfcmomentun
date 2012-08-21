@@ -25,4 +25,4 @@
 		<% end %>
 	<% end %>
 	<% dir = "http://chart.apis.google.com/chart?cht=lc&chco=ff0000,000000&chs=570x300&chd=t:"+ puntos + "|" + puntos2 + "&chds=" + @axis_y_values[0] +","+ @axis_y_values[1] + "&chdl="+ @user1.name + "|" + @user2.name + "&chma=20,20,20,30|80,20&chxt=x,y&chxl=0:"+ @dates + "|1:" + @axis_y_labels + "&chf=c,lg,0,FFE7C6,0,76A4FB,1|bg,s,EFEFEF&chtt=Evolución y Comparativa de las influencias" %>
-		<img class="noFloat columnas2" src="<%= dir %>" alt="Evolución y Comparativa de las influencias datos: usuario <%= @user1.name %>: <%= puntos %> usuario <%= @user2.name %>: <%= puntos2 %>" />
+		<img class="noFloat" src="<%= dir %>" alt="Evolución y Comparativa de las influencias datos: usuario <%= @user1.name %>: <%= puntos %> usuario <%= @user2.name %>: <%= puntos2 %>" />

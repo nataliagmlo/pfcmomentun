@@ -1,7 +1,7 @@
 
 require 'pg'
 require 'json'
-require_relative '../momentum'
+require_relative '../business/momentum'
 require_relative '../../app/models/user'
 
 class USMFParser

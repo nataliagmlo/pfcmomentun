@@ -3,9 +3,9 @@ require 'rubygems'
 require 'time'
 require 'pg'
 
-require_relative '../app/models/period.rb'
-require_relative '../app/models/user.rb'
-require_relative '../app/models/influence.rb'
+require_relative '../../app/models/period.rb'
+require_relative '../../app/models/user.rb'
+require_relative '../../app/models/influence.rb'
 
 
 class Momentum

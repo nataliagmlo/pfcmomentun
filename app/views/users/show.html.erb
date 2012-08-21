@@ -15,11 +15,11 @@
 	<% end %>
 	<% if tam > 1 %>
 		<% dir = "http://chart.apis.google.com/chart?cht=lc&chco=ff0000&chs=570x300&chd=t:"+ puntos + "&chds=" + @axis_y_values[0] +","+ @axis_y_values[1] + "&chdl="+ @user.name + "&chma=20,20,20,30|80,20&chxt=x,y&chxl=0:"+ @dates + "|1:" + @axis_y_labels + "&chf=c,lg,0,FFE7C6,0,76A4FB,1|bg,s,EFEFEF&chtt=Evolución de la influencia" %>
-		<img class="noFloat columnas2" src="<%= dir %>" alt="Evolución de la influencia datos: <%= puntos %>" />
+		<img class="noFloat columns2" src="<%= dir %>" alt="Evolución de la influencia datos: <%= puntos %>" />
 	<% else %>
-		<p class="noFloat informacion">No está disponible la evolución de su influencia, ya que tan śolo tiene un valor. Inlfuencia = <%= puntos %> </p>
+		<p class="noFloat information">No está disponible la evolución de su influencia, ya que tan śolo tiene un valor. Inlfuencia = <%= puntos %> </p>
 	<% end %>
-	<div class="columnas2 momentum">
+	<div class="columns2 momentum">
 		<p>¿Te apetece comparar tus datos con otro usuario?<br/>Introduce su nombre</p>
 		<%= form_tag users_path, :method => 'get' do %>
 			<fieldset>

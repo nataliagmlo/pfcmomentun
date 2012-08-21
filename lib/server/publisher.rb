@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'redis'
 require 'json'
-require './PhraseGenerator'
+require_relative './PhraseGenerator'
 
  
 #arrancar con publisher.rb

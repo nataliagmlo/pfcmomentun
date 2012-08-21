@@ -1,6 +1,6 @@
 # encoding: utf-8
 require_relative '../spec_helper'
-require_relative '../../lib/tasks/USMFParser'
+require_relative '../../lib/client/USMFParser'
 
 describe USMFParser do
   
