@@ -2,6 +2,9 @@ require 'rubygems'
 require 'redis'
 require 'em-websocket'
  
+# @author Natalia Garcia Menendez
+# @version 1.0
+# Code to create the WebSockets server retransmit manage customers and clients information
 SOCKETS = []
 @redis = Redis.new(:host => '127.0.0.1', :port => 6379)
  

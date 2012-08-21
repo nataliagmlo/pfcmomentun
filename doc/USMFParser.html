@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: USMFParser
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (U)</a> &raquo;
+    
+    
+    <span class="title">USMFParser</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: USMFParser
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">USMFParser</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/client/USMFParser.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+Class responsible for parsing the message format USMF to model objects, and
+then run the algorithm Momentum
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+Natalia Garcia Menendez
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+1.0
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_tweet_creator-instance_method" title="#parse_tweet_creator (instance method)">- (Object) <strong>parse_tweet_creator</strong>(user) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Method that creates a user with the data received in a hash table.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_users_mentions-instance_method" title="#parse_users_mentions (instance method)">- (Object) <strong>parse_users_mentions</strong>(users, date_tweet) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Method that creates users with data received in a hash table, stores them
+in an array and sends them to the algorithm.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parser-instance_method" title="#parser (instance method)">- (Object) <strong>parser</strong>(msg) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Method that parses the data with JSON.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="parse_tweet_creator-instance_method">
+  
+    - (<tt>Object</tt>) <strong>parse_tweet_creator</strong>(user) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Method that creates a user with the data received in a hash table
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user</span>
+      
+      
+        <span class='type'>(<tt>Hash Table</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+User data to create
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/client/USMFParser.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_tweet_creator'>parse_tweet_creator</span> <span class='id identifier rubyid_user'>user</span>
+	<span class='id identifier rubyid_u'>u</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find_or_create_by_user_id'>find_or_create_by_user_id</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_avatar'>avatar</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>avatar</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>description</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_geo'>geo</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>geo</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_language'>language</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>language</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_location'>location</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>location</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_postings'>postings</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>postings</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_profile'>profile</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>profile</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_real_name'>real_name</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>real_name</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_subscribers'>subscribers</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>subscribers</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_subscriptions'>subscriptions</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>subscriptions</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span> <span class='op'>=</span> <span class='id identifier rubyid_user'>user</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>utc</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+
+	<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_users_mentions-instance_method">
+  
+    - (<tt>Object</tt>) <strong>parse_users_mentions</strong>(users, date_tweet) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Method that creates users with data received in a hash table, stores them
+in an array and sends them to the algorithm
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>users</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>, <tt>Hash Table</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+User data mentioned
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>date_tweet</span>
+      
+      
+        <span class='type'>(<tt>string</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Menssage date
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/client/USMFParser.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_users_mentions'>parse_users_mentions</span> <span class='id identifier rubyid_users'>users</span><span class='comma'>,</span> <span class='id identifier rubyid_date_tweet'>date_tweet</span>
+	<span class='id identifier rubyid_users_mentions'>users_mentions</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_item'>item</span><span class='op'>|</span>
+		<span class='id identifier rubyid_u'>u</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find_or_create_by_user_id'>find_or_create_by_user_id</span> <span class='id identifier rubyid_item'>item</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+		<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_item'>item</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+
+		<span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+
+		<span class='id identifier rubyid_users_mentions'>users_mentions</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_u'>u</span>
+	<span class='kw'>end</span>
+		<span class='id identifier rubyid_m'>m</span> <span class='op'>=</span> <span class='const'>Momentum</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+		<span class='id identifier rubyid_m'>m</span><span class='period'>.</span><span class='id identifier rubyid_calculate_influences'>calculate_influences</span> <span class='id identifier rubyid_users_mentions'>users_mentions</span><span class='comma'>,</span> <span class='id identifier rubyid_date_tweet'>date_tweet</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parser-instance_method">
+  
+    - (<tt>Object</tt>) <strong>parser</strong>(msg) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Method that parses the data with JSON
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>msg</span>
+      
+      
+        <span class='type'>(<tt>USMF</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+message recieved a social network
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/client/USMFParser.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parser'>parser</span> <span class='id identifier rubyid_msg'>msg</span>
+
+	<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
+	<span class='kw'>if</span> <span class='id identifier rubyid_status'>status</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Error</span><span class='tstring_end'>'</span></span>
+		<span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>status malformed</span><span class='tstring_end'>&quot;</span></span>
+	<span class='kw'>end</span>
+	
+	<span class='kw'>unless</span> <span class='id identifier rubyid_status'>status</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>user</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>nil</span>
+		<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id tweet </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_status'>status</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> 
+		
+		<span class='id identifier rubyid_parse_tweet_creator'>parse_tweet_creator</span> <span class='id identifier rubyid_status'>status</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>user</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+
+		<span class='id identifier rubyid_users'>users</span> <span class='op'>=</span> <span class='id identifier rubyid_status'>status</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>to_users</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+		<span class='kw'>unless</span> <span class='id identifier rubyid_users'>users</span> <span class='op'>==</span> <span class='kw'>nil</span>
+			<span class='id identifier rubyid_parse_users_mentions'>parse_users_mentions</span> <span class='id identifier rubyid_users'>users</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>date</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+		<span class='kw'>end</span>
+		
+	<span class='kw'>end</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Aug 21 23:24:09 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

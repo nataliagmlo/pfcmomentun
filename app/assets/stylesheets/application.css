@@ -42,13 +42,13 @@ img {vertical-align: middle;}
     font-weight: bold;}
 img.center {display: block; margin: auto;}
 .detail {font-size: 1.2em;}
-.mention {width:60%; text-align: left; padding-left: 7%;}
-/*.compare_to {float:right; margin: 0; padding: 0;}*/
+.detail p {text-align: center;}
 .green {color: #008000;}
+.red {color: red;}
 .bold{font-weight: bold;}
 .profile{width: 25%; float: left; text-align: right;}
-.desc {clear:both; width:100%; text-align: left; padding-left: 3%;}
-/*.evolution{clear: both; border: thin solid #DFDBD2;}*/
+.desc {clear:both; width:100%; text-align: left!important; padding-left: 3%;}
+.mention {width:60%; text-align: left!important;}
 .noFloat {clear: both;}
 .fright{float: right;}
 .fleft{float: left;}

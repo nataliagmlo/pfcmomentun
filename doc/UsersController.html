@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: UsersController
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (U)</a> &raquo;
+    
+    
+    <span class="title">UsersController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: UsersController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
+          
+            <li class="next">UsersController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/users_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+Class that is responsible for receiving requests for the &#8220;user&#8220;
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+Natalia Garcia Menendez
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+1.0
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#axis_labels-instance_method" title="#axis_labels (instance method)">- (Object) <strong>axis_labels</strong>(axis_values) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Helper method to calculate the name of axis labels &#8220;y&#8221;.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#axis_values-instance_method" title="#axis_values (instance method)">- (Object) <strong>axis_values</strong>(influences) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Helper method to calculate the value of axis labels &#8220;y&#8221;.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dates_for_axis-instance_method" title="#dates_for_axis (instance method)">- (Object) <strong>dates_for_axis</strong>(influences) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Helper method to calculate the name of axis labels &#8220;x&#8221;.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Method that controls the actions that are intended to index.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show-instance_method" title="#show (instance method)">- (Object) <strong>show</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Method that controls the actions that are intended to show.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="axis_labels-instance_method">
+  
+    - (<tt>Object</tt>) <strong>axis_labels</strong>(axis_values) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Helper method to calculate the name of axis labels &#8220;y&#8220;
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_axis_labels'>axis_labels</span> <span class='id identifier rubyid_axis_values'>axis_values</span>
+	<span class='id identifier rubyid_l'>l</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+	<span class='id identifier rubyid_dist'>dist</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_axis_values'>axis_values</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>-</span> <span class='id identifier rubyid_axis_values'>axis_values</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span><span class='op'>/</span><span class='float'>5.0</span>
+	<span class='id identifier rubyid_valor'>valor</span> <span class='op'>=</span> <span class='id identifier rubyid_axis_values'>axis_values</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+	<span class='kw'>for</span> <span class='id identifier rubyid_num'>num</span> <span class='kw'>in</span> <span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='int'>6</span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_l'>l</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%.2f</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_valor'>valor</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+		<span class='id identifier rubyid_valor'>valor</span> <span class='op'>+=</span> <span class='id identifier rubyid_dist'>dist</span>
+	<span class='kw'>end</span>
+	<span class='id identifier rubyid_l'>l</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="axis_values-instance_method">
+  
+    - (<tt>Object</tt>) <strong>axis_values</strong>(influences) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Helper method to calculate the value of axis labels &#8220;y&#8220;
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_axis_values'>axis_values</span> <span class='id identifier rubyid_influences'>influences</span>
+	<span class='id identifier rubyid_min'>min</span> <span class='op'>=</span> <span class='id identifier rubyid_influences'>influences</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_velocity'>velocity</span>
+	<span class='id identifier rubyid_max'>max</span> <span class='op'>=</span> <span class='id identifier rubyid_influences'>influences</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_velocity'>velocity</span>
+
+	<span class='id identifier rubyid_influences'>influences</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_influence'>influence</span><span class='op'>|</span> 
+		<span class='kw'>if</span> <span class='id identifier rubyid_influence'>influence</span><span class='period'>.</span><span class='id identifier rubyid_velocity'>velocity</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_min'>min</span>
+			<span class='id identifier rubyid_min'>min</span> <span class='op'>=</span> <span class='id identifier rubyid_influence'>influence</span><span class='period'>.</span><span class='id identifier rubyid_velocity'>velocity</span>
+		<span class='kw'>end</span>
+		<span class='kw'>if</span> <span class='id identifier rubyid_influence'>influence</span><span class='period'>.</span><span class='id identifier rubyid_velocity'>velocity</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_max'>max</span>
+			<span class='id identifier rubyid_max'>max</span> <span class='op'>=</span> <span class='id identifier rubyid_influence'>influence</span><span class='period'>.</span><span class='id identifier rubyid_velocity'>velocity</span>
+		<span class='kw'>end</span>
+
+	<span class='kw'>end</span>
+	<span class='id identifier rubyid_v'>v</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+	<span class='id identifier rubyid_min'>min</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_min'>min</span><span class='op'>*</span><span class='int'>100</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_floor'>floor</span>
+
+	<span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_min'>min</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> 
+	<span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_max'>max</span><span class='op'>*</span><span class='int'>100</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_ceil'>ceil</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+	<span class='id identifier rubyid_v'>v</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dates_for_axis-instance_method">
+  
+    - (<tt>Object</tt>) <strong>dates_for_axis</strong>(influences) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Helper method to calculate the name of axis labels &#8220;x&#8220;
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_dates_for_axis'>dates_for_axis</span> <span class='id identifier rubyid_influences'>influences</span>
+	<span class='id identifier rubyid_min'>min</span> <span class='op'>=</span> <span class='id identifier rubyid_influences'>influences</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_date'>date</span>
+	<span class='id identifier rubyid_max'>max</span> <span class='op'>=</span> <span class='id identifier rubyid_influences'>influences</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_date'>date</span>
+
+	<span class='id identifier rubyid_influences'>influences</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_influence'>influence</span><span class='op'>|</span> 
+		<span class='kw'>if</span> <span class='id identifier rubyid_influence'>influence</span><span class='period'>.</span><span class='id identifier rubyid_date'>date</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_min'>min</span>
+			<span class='id identifier rubyid_min'>min</span> <span class='op'>=</span> <span class='id identifier rubyid_influence'>influence</span><span class='period'>.</span><span class='id identifier rubyid_date'>date</span>
+		<span class='kw'>end</span>
+		<span class='kw'>if</span> <span class='id identifier rubyid_influence'>influence</span><span class='period'>.</span><span class='id identifier rubyid_date'>date</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_max'>max</span>
+			<span class='id identifier rubyid_max'>max</span> <span class='op'>=</span> <span class='id identifier rubyid_influence'>influence</span><span class='period'>.</span><span class='id identifier rubyid_date'>date</span>
+		<span class='kw'>end</span>
+	<span class='kw'>end</span>
+	<span class='id identifier rubyid_hours'>hours</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_max'>max</span> <span class='op'>-</span> <span class='id identifier rubyid_min'>min</span><span class='rparen'>)</span><span class='op'>/</span><span class='int'>3600</span><span class='rparen'>)</span><span class='op'>/</span><span class='int'>3</span>
+
+	<span class='id identifier rubyid_media'>media</span> <span class='op'>=</span> <span class='id identifier rubyid_min'>min</span> <span class='op'>+</span> <span class='id identifier rubyid_hours'>hours</span><span class='period'>.</span><span class='id identifier rubyid_hour'>hour</span>
+
+
+	<span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+	<span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='id identifier rubyid_influences'>influences</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+	<span class='id identifier rubyid_d'>d</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_min'>min</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%d %b %H:%M</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_d'>d</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_media'>media</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%d %b %H:%M</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_d'>d</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_media'>media</span> <span class='op'>+</span> <span class='id identifier rubyid_hours'>hours</span><span class='period'>.</span><span class='id identifier rubyid_hour'>hour</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%d %b %H:%M</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_d'>d</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_max'>max</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%d %b %H:%M</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_d'>d</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Method that controls the actions that are intended to index
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
+	<span class='ivar'>@user1</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id1</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='ivar'>@influence1</span> <span class='op'>=</span> <span class='ivar'>@user1</span><span class='period'>.</span><span class='id identifier rubyid_previous_influence'>previous_influence</span>
+  	<span class='ivar'>@influences1</span> <span class='op'>=</span> <span class='ivar'>@user1</span><span class='period'>.</span><span class='id identifier rubyid_influences'>influences</span> 
+
+	<span class='ivar'>@user2</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id2</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+	<span class='ivar'>@influence2</span> <span class='op'>=</span> <span class='ivar'>@user2</span><span class='period'>.</span><span class='id identifier rubyid_previous_influence'>previous_influence</span>
+  	<span class='ivar'>@influences2</span> <span class='op'>=</span> <span class='ivar'>@user2</span><span class='period'>.</span><span class='id identifier rubyid_influences'>influences</span> 
+  	
+  	<span class='id identifier rubyid_merge_influences'>merge_influences</span> <span class='op'>=</span> <span class='ivar'>@influences1</span> <span class='op'>+</span> <span class='ivar'>@influences2</span>
+  	<span class='ivar'>@dates</span> <span class='op'>=</span> <span class='id identifier rubyid_dates_for_axis'>dates_for_axis</span><span class='lparen'>(</span><span class='id identifier rubyid_merge_influences'>merge_influences</span><span class='rparen'>)</span>
+  	<span class='ivar'>@axis_y_values</span> <span class='op'>=</span> <span class='id identifier rubyid_axis_values'>axis_values</span><span class='lparen'>(</span><span class='id identifier rubyid_merge_influences'>merge_influences</span><span class='rparen'>)</span>
+  	<span class='ivar'>@axis_y_labels</span> <span class='op'>=</span> <span class='id identifier rubyid_axis_labels'>axis_labels</span><span class='lparen'>(</span><span class='ivar'>@axis_y_values</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show-instance_method">
+  
+    - (<tt>Object</tt>) <strong>show</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Method that controls the actions that are intended to show
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
+  	<span class='ivar'>@user</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  	<span class='ivar'>@influence</span> <span class='op'>=</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_previous_influence'>previous_influence</span>
+  	<span class='ivar'>@influences</span> <span class='op'>=</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_influences'>influences</span> 
+
+  	<span class='ivar'>@dates</span> <span class='op'>=</span> <span class='id identifier rubyid_dates_for_axis'>dates_for_axis</span><span class='lparen'>(</span><span class='ivar'>@influences</span><span class='rparen'>)</span>
+  	<span class='ivar'>@axis_y_values</span> <span class='op'>=</span> <span class='id identifier rubyid_axis_values'>axis_values</span><span class='lparen'>(</span><span class='ivar'>@influences</span><span class='rparen'>)</span>
+  	<span class='ivar'>@axis_y_labels</span> <span class='op'>=</span> <span class='id identifier rubyid_axis_labels'>axis_labels</span><span class='lparen'>(</span><span class='ivar'>@axis_y_values</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Aug 21 23:24:09 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

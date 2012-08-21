@@ -1,4 +1,3 @@
-
 require 'rubygems'
 require 'time'
 require 'pg'
@@ -7,12 +6,18 @@ require_relative '../../app/models/period.rb'
 require_relative '../../app/models/user.rb'
 require_relative '../../app/models/influence.rb'
 
-
+# @author Natalia Garcia Menendez
+# @version 1.0
+#
+#Class algorithm developed by Momentum. Performs calculations influences, velocity and acceleration
 class Momentum
 
-
+	# Method developed by the algorithm
+	# @param users_mentions [Array,User] Users for which is calculated influence
+	# @param date_tweet [string] Menssage date 
 	def calculate_influences users_mentions, date_tweet
 
+		# Extract data from de date
 		y = date_tweet[26,4]
 		m = date_tweet[4,3]
 		d = date_tweet[8,2]
@@ -27,7 +32,7 @@ class Momentum
 	    mn= mn.to_i
 	    s= s.to_i
 
-		# We get the previous hourly report to get some variables such as the average number of mentions, followers, etc. and the current one so we fill it
+		# We get the previous hourly report to get some variables such as the number of mentions, followers, etc. And de current time
 		current_hour = Time.new(y,m,d, h, mn, s, z)
 		previous_hour = current_hour - 1.hour
 		
@@ -39,13 +44,14 @@ class Momentum
 		if p.first != nil
 
 			previous_period_report = p.first
-			# Now, with twitter info we shoud be able to compute Phi. We need:
-			# The average number of mentions per hour (for now, the mentions in this period)
+			# Now with the information calculated in the previous period some of the data necessary for the algorithm
+			# Number of mentions
 			mentions_per_hour = previous_period_report.total_mentions
 			# Number of users
 			users_per_hour = previous_period_report.total_users
+			# The average number of mentions for a user
 			average_mentions_per_hour = mentions_per_hour / users_per_hour.to_f
-			# The average number of subscribers for a user (taken from the users mentioned in the last period)
+			# The average number of subscribers for a user 
 			average_subscribers = previous_period_report.total_audience / previous_period_report.users_with_subscribers.to_f
 
 			# Phi is a measure of how easy is to be replied.
@@ -54,35 +60,47 @@ class Momentum
 			phi = average_mentions_per_hour / average_subscribers
 
 		end
-		# variables to store how must we update the current period
+		# Variables to store how must we update the current period
 		subscribers = 0
 		mentions = users_mentions.count
 		new_mentioned_users = 0
 		new_users_with_subscribers = 0
+
+
 		users_mentions.each do |user|
 			
+				# Check if this is the first mention that the user receives in this period
 				first_mention = true
 				if user.last_mention_at != nil
 					first_mention =  user.last_mention_at.strftime("%Y %b %d %H") < current_hour.strftime("%Y %b %d %H")
 				end
 				
+				# Calculate the number of hours since the last mention of the user, if we know the time
 				hours_since_last_mention = (current_hour - user.last_mention_at)/3600.0 if user.last_mention_at != nil
 
+				# Increase by one the users mentioned
 				new_mentioned_users += 1 if first_mention
+
+			# If you have the number of followers the user can not calculate the influence
 			unless user.subscribers == nil
 				
+				# Update the variables for the current period
 				subscribers += user.subscribers
 				new_users_with_subscribers += 1 if first_mention
 
-				user_subscribers = user.subscribers		
- 
+				# Variables needed to calculat the influence
+				user_subscribers = user.subscribers		 
 				previous_influence = user.previous_influence
 				acceleration = 0
 				velocity = 0
+
+				# Seek influence user's previous
 				if previous_influence != nil
 					acceleration = previous_influence.acceleration
 					velocity = previous_influence.velocity
 				end
+
+				# Calculate the influence if there previous period when the last mention, and hours since the last mention and the number of followers are not 0
 				if p.first != nil and user.last_mention_at != nil and hours_since_last_mention != 0.0 and user.subscribers > 0
 					acceleration += 1/(user_subscribers.to_f * hours_since_last_mention) - phi
 					velocity += acceleration * hours_since_last_mention
@@ -92,13 +110,15 @@ class Momentum
 					puts "calculate influence"
 				end
 			end
+
+			# Updates the hour of the last mention of the user with the current time
 			user.last_mention_at = current_hour
 			user.save
 
 		end
 	
 
-		# We get the current report and save it
+		# Update or create the current period
 		current_period_report = Period.find_previous(current_hour).first
 
 		if current_period_report == nil
@@ -113,7 +133,7 @@ class Momentum
 			current_period_report.total_users += new_mentioned_users
 			current_period_report.users_with_subscribers += new_users_with_subscribers
 		end
-			current_period_report.save
+		current_period_report.save
 
 	rescue Exception => ex
 		puts "Momentum: #{ex}"

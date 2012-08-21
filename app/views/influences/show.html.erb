@@ -1,9 +1,8 @@
 <h2>Influencia <span class="green bold"><%= format("%.2f", (@influence.velocity*100)) %></span></h2>
 
-<p class="detail">
-	
-	<p class="profile">Aceleración: <span class="bold"><%= @influence.acceleration %></span></p>
+<div class="detail">
+	<p class="profile">Usuario: <span class="bold"> <%= (link_to @influence.user.name, user_path(@influence.user)) unless @influence.user.nil? %></span> <img src="<%= @influence.user.avatar %>" alt="avatar del usuario"/></p>
+	<p class="profile">Aceleración: <span class="bold"><%= format("%.2f", (@influence.acceleration*100)) %></span></p>
 	<p class="profile">Fecha:: <span class="bold"><%= @influence.date %> </span></p>
-	<p class="profile">Usuario: <span class="bold"> <%= (link_to @influence.user.name, user_path(@influence.user)) unless @influence.user.nil? %></span></p>
 	<p class="profile">Seguidores: <span class="bold">: <%= @influence.audience %></span></p>
-</p>
+</div>

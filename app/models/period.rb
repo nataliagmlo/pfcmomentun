@@ -13,12 +13,13 @@ class Period < ActiveRecord::Base
 	}
 
 	# Look for the periods prior to the date and time received, sorted by date descending
-  	# @param previous_hour [DateTime] Time and date of the period to seek
-  	# @return [Array,Period] Periods that meet the condition
+  # @param previous_hour [DateTime] Time and date of the period to seek
+  # @return [Array,Period] Periods that meet the condition
 	scope :find_another_previous, lambda { |previous_hour|
 		{:conditions => ["end_time <= ?", previous_hour], :order => "end_time desc"}
 	}
 
+  # Method for converting an Influence on string
   def to_s
     s = "Period:"
     s += "\n\tend: " + end_time.to_s

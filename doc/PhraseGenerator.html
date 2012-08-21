@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: PhraseGenerator
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (P)</a> &raquo;
+    
+    
+    <span class="title">PhraseGenerator</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: PhraseGenerator
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">PhraseGenerator</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/server/PhraseGenerator.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+Class for each hour representing the data necessary to calculate the
+algorithm &#8220;Momentum&#8220;
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+Natalia Garcia Menendez
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+1.0
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate-instance_method" title="#generate (instance method)">- (Object) <strong>generate</strong>(i) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Method that returns the message number &#8220;i&#8221;.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="generate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>generate</strong>(i) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Method that returns the message number &#8220;i&#8220;
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>i</span>
+      
+      
+        <span class='type'>(<tt>integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+number of message
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/server/PhraseGenerator.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate'>generate</span> <span class='id identifier rubyid_i'>i</span>
+
+<span class='ivar'>@phrase</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:&quot;212879154717274113&quot;,&quot;geo&quot;:null,&quot;application&quot;:&quot;web&quot;,&quot;location&quot;:null,&quot;date&quot;:&quot;Wed Jun 13 12:08:40 +0000 2012&quot;,&quot;source&quot;:&quot;https://twitter.com/Sigohaciendorap/status/212879154717274113&quot;,&quot;text&quot;:&quot;RT @HoneckerRDA: Me siguen los mineros asturianos @PorAsturies  Orgullo de la clase obrera y verdaderos heroes nacionales frente a la ...&quot;,&quot;description&quot;:null,&quot;keywords&quot;:&quot;&quot;,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:9,&quot;dislikes&quot;:null,&quot;favorites&quot;:281,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:{&quot;name&quot;:&quot;Sigohaciendorap&quot;,&quot;real_name&quot;:&quot;Ana Poleon Roja&quot;,&quot;id&quot;:&quot;262670183&quot;,&quot;language&quot;:&quot;es&quot;,&quot;utc&quot;:&quot;Athens + 7200&quot;,&quot;geo&quot;:null,&quot;description&quot;:&quot;Prefiero !áuna libertad peligrosa a una esclavitud tranquila.&quot;,&quot;avatar&quot;:&quot;https://si0.twimg.com/profile_images/2263582427/conestasqueesmivoz_normal.jpg&quot;,&quot;location&quot;:&quot;&quot;,&quot;subscribers&quot;:625,&quot;subscriptions&quot;:1274,&quot;postings&quot;:4327,&quot;profile&quot;:&quot;https://twitter.com/#!/Sigohaciendorap&quot;,&quot;website&quot;:&quot;http://loquenecesitabas.blogspot.es/&quot;},&quot;links&quot;:[],&quot;to_users&quot;:[{&quot;name&quot;:&quot;HoneckerRDA&quot;,&quot;id&quot;:&quot;555993471&quot;,&quot;service&quot;:&quot;mention&quot;,&quot;title&quot;:null,&quot;thumbnail&quot;:null,&quot;href&quot;:null},{&quot;name&quot;:&quot;PorAsturies&quot;,&quot;id&quot;:&quot;594432676&quot;,&quot;service&quot;:&quot;mention&quot;,&quot;title&quot;:null,&quot;thumbnail&quot;:null,&quot;href&quot;:null}]}</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:&quot;212887771839336448&quot;,&quot;geo&quot;:null,&quot;application&quot;:&quot;&lt;a href=\&quot;http://blackberry.com/twitter\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for BlackBerry®&lt;/a&gt;&quot;,&quot;location&quot;:null,&quot;date&quot;:&quot;Wed Jun 13 12:42:54 +0000 2012&quot;,&quot;source&quot;:&quot;https://twitter.com/joaquin_lc/status/212887771839336448&quot;,&quot;text&quot;:&quot;RT @mariadelamiel: (1) Corre el rumor de que el BCE se está planteando rebajar a 0% la rentabilidad que paga a los bancos por los depósi ...&quot;,&quot;description&quot;:null,&quot;keywords&quot;:&quot;&quot;,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:19,&quot;dislikes&quot;:null,&quot;favorites&quot;:0,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:{&quot;name&quot;:&quot;joaquin_lc&quot;,&quot;real_name&quot;:&quot;Joaquin Lopez&quot;,&quot;id&quot;:&quot;292605298&quot;,&quot;language&quot;:&quot;es&quot;,&quot;utc&quot;:&quot;Madrid + 3600&quot;,&quot;geo&quot;:null,&quot;description&quot;:&quot;Licenciado en Administración y Dirección de Empresas por la UAL - Arbitro territorial de la FABM - Ex banquero-Futuro empresario&quot;,&quot;avatar&quot;:&quot;https://si0.twimg.com/profile_images/1337794252/krillin2_normal.jpg&quot;,&quot;location&quot;:&quot;&quot;,&quot;subscribers&quot;:64,&quot;subscriptions&quot;:105,&quot;postings&quot;:900,&quot;profile&quot;:&quot;https://twitter.com/#!/joaquin_lc&quot;,&quot;website&quot;:null},&quot;links&quot;:[],&quot;to_users&quot;:[{&quot;name&quot;:&quot;mariadelamiel&quot;,&quot;id&quot;:&quot;316058009&quot;,&quot;service&quot;:&quot;mention&quot;,&quot;title&quot;:null,&quot;thumbnail&quot;:null,&quot;href&quot;:null}]}</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:null,&quot;geo&quot;:null,&quot;application&quot;:null,&quot;location&quot;:null,&quot;date&quot;:null,&quot;source&quot;:null,&quot;text&quot;:null,&quot;description&quot;:null,&quot;keywords&quot;:null,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:null,&quot;dislikes&quot;:null,&quot;favorites&quot;:null,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:null,&quot;links&quot;:[],&quot;to_users&quot;:[]}</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:&quot;212887775740051456&quot;,&quot;geo&quot;:null,&quot;application&quot;:&quot;web&quot;,&quot;location&quot;:null,&quot;date&quot;:&quot;Wed Jun 13 12:42:55 +0000 2012&quot;,&quot;source&quot;:&quot;https://twitter.com/taciseeger/status/212887775740051456&quot;,&quot;text&quot;:&quot;Vou lavar a louça ;S&quot;,&quot;description&quot;:null,&quot;keywords&quot;:&quot;&quot;,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:0,&quot;dislikes&quot;:null,&quot;favorites&quot;:1,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:{&quot;name&quot;:&quot;taciseeger&quot;,&quot;real_name&quot;:&quot;T a c i :)&quot;,&quot;id&quot;:&quot;155252570&quot;,&quot;language&quot;:&quot;pt&quot;,&quot;utc&quot;:&quot;Brasilia + -10800&quot;,&quot;geo&quot;:null,&quot;description&quot;:&quot;ℒittℓℯ ℳℴns†ℯr. Deus, Família, Terapia Ocupacional, Dança, Música, Literatura e afins! ♥&quot;,&quot;avatar&quot;:&quot;https://si0.twimg.com/profile_images/2299039753/0vu1ik72xux8lk136qlf_normal.jpeg&quot;,&quot;location&quot;:&quot;Santa Maria, BR&quot;,&quot;subscribers&quot;:861,&quot;subscriptions&quot;:772,&quot;postings&quot;:11392,&quot;profile&quot;:&quot;https://twitter.com/#!/taciseeger&quot;,&quot;website&quot;:&quot;http://www.facebook.com/profile.php?id=100002463339808&quot;},&quot;links&quot;:[],&quot;to_users&quot;:[]}</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:&quot;212887775576473600&quot;,&quot;geo&quot;:null,&quot;application&quot;:&quot;&lt;a href=\&quot;http://blackberry.com/twitter\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for BlackBerry®&lt;/a&gt;&quot;,&quot;location&quot;:null,&quot;date&quot;:&quot;Wed Jun 13 12:42:55 +0000 2012&quot;,&quot;source&quot;:&quot;https://twitter.com/Marleenvdk/status/212887775576473600&quot;,&quot;text&quot;:&quot;@JaravdVelden Hahah ik dacht dat vrouwen dat konden ? ;p 2 dingen tegelijk (a) ja mss kan jou oog wel praten.. Hahahahha&quot;,&quot;description&quot;:&quot;212887659675262978&quot;,&quot;keywords&quot;:&quot;&quot;,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:0,&quot;dislikes&quot;:null,&quot;favorites&quot;:0,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:{&quot;name&quot;:&quot;Marleenvdk&quot;,&quot;real_name&quot;:&quot;Marleen&quot;,&quot;id&quot;:&quot;371870304&quot;,&quot;language&quot;:&quot;nl&quot;,&quot;utc&quot;:&quot;Amsterdam + 3600&quot;,&quot;geo&quot;:null,&quot;description&quot;:&quot;Ik heb mooie tijden met je gehad, echt waar ! ♥ ik mis je&quot;,&quot;avatar&quot;:&quot;https://si0.twimg.com/profile_images/2229789375/sjklkfdglkdshflkdhsf_20_1__normal.jpg&quot;,&quot;location&quot;:&quot;&quot;,&quot;subscribers&quot;:221,&quot;subscriptions&quot;:227,&quot;postings&quot;:17285,&quot;profile&quot;:&quot;https://twitter.com/#!/Marleenvdk&quot;,&quot;website&quot;:null},&quot;links&quot;:[],&quot;to_users&quot;:[{&quot;name&quot;:&quot;JaravdVelden&quot;,&quot;id&quot;:&quot;309236395&quot;,&quot;service&quot;:&quot;reply&quot;,&quot;title&quot;:&quot;212887659675262978&quot;,&quot;thumbnail&quot;:null,&quot;href&quot;:&quot;https://twitter.com/Marleenvdk/status/212887775576473600&quot;}]}</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:&quot;212887775568084993&quot;,&quot;geo&quot;:null,&quot;application&quot;:&quot;&lt;a href=\&quot;http://blackberry.com/twitter\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for BlackBerry®&lt;/a&gt;&quot;,&quot;location&quot;:null,&quot;date&quot;:&quot;Wed Jun 13 12:42:55 +0000 2012&quot;,&quot;source&quot;:&quot;https://twitter.com/Keilyndguerrero/status/212887775568084993&quot;,&quot;text&quot;:&quot;@MaryAndribelZ hoooy mmm nosee dejame ver mi agenda a ver si esty disponiblee jajaj&quot;,&quot;description&quot;:&quot;212887460135448576&quot;,&quot;keywords&quot;:&quot;&quot;,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:0,&quot;dislikes&quot;:null,&quot;favorites&quot;:4,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:{&quot;name&quot;:&quot;Keilyndguerrero&quot;,&quot;real_name&quot;:&quot;Keilyn Andreina Diaz&quot;,&quot;id&quot;:&quot;145089810&quot;,&quot;language&quot;:&quot;en&quot;,&quot;utc&quot;:&quot;Hawaii + -36000&quot;,&quot;geo&quot;:null,&quot;description&quot;:&quot;Centrada en lo q quiero.. No espero nada de nadie..Nada en la vida me sorprende. Calmada y relaxx cero enrollada.. &quot;,&quot;avatar&quot;:&quot;https://si0.twimg.com/profile_images/2297626739/_Keilhhghhg_normal.jpg&quot;,&quot;location&quot;:&quot;Barinas Venezuela&quot;,&quot;subscribers&quot;:185,&quot;subscriptions&quot;:411,&quot;postings&quot;:1168,&quot;profile&quot;:&quot;https://twitter.com/#!/Keilyndguerrero&quot;,&quot;website&quot;:null},&quot;links&quot;:[],&quot;to_users&quot;:[{&quot;name&quot;:&quot;MaryAndribelZ&quot;,&quot;id&quot;:&quot;209395768&quot;,&quot;service&quot;:&quot;reply&quot;,&quot;title&quot;:&quot;212887460135448576&quot;,&quot;thumbnail&quot;:null,&quot;href&quot;:&quot;https://twitter.com/Keilyndguerrero/status/212887775568084993&quot;}]}</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:&quot;212887775400308738&quot;,&quot;geo&quot;:null,&quot;application&quot;:&quot;&lt;a href=\&quot;http://blackberry.com/twitter\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for BlackBerry®&lt;/a&gt;&quot;,&quot;location&quot;:null,&quot;date&quot;:&quot;Wed Jun 13 12:42:55 +0000 2012&quot;,&quot;source&quot;:&quot;https://twitter.com/Fabiola_chule/status/212887775400308738&quot;,&quot;text&quot;:&quot;RT @jorgesuarezv: AMLO: bajar sueldos a burócratas. ¿Hay mejor fórmula para que aumente la corrupción? ¿Cómo puede gente inteligente apo ...&quot;,&quot;description&quot;:null,&quot;keywords&quot;:&quot;&quot;,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:8,&quot;dislikes&quot;:null,&quot;favorites&quot;:0,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:{&quot;name&quot;:&quot;Fabiola_chule&quot;,&quot;real_name&quot;:&quot;Fabiola Nuñez&quot;,&quot;id&quot;:&quot;38903661&quot;,&quot;language&quot;:&quot;en&quot;,&quot;utc&quot;:&quot;Central Time (US &amp; Canada) + -21600&quot;,&quot;geo&quot;:null,&quot;description&quot;:&quot;&quot;,&quot;avatar&quot;:&quot;https://si0.twimg.com/profile_images/204664871/fab_normal.JPG&quot;,&quot;location&quot;:&quot;Veracruz, Mexico&quot;,&quot;subscribers&quot;:110,&quot;subscriptions&quot;:179,&quot;postings&quot;:2197,&quot;profile&quot;:&quot;https://twitter.com/#!/Fabiola_chule&quot;,&quot;website&quot;:null},&quot;links&quot;:[],&quot;to_users&quot;:[{&quot;name&quot;:&quot;jorgesuarezv&quot;,&quot;id&quot;:&quot;252254457&quot;,&quot;service&quot;:&quot;mention&quot;,&quot;title&quot;:null,&quot;thumbnail&quot;:null,&quot;href&quot;:null}]}</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:&quot;212887775677124609&quot;,&quot;geo&quot;:null,&quot;application&quot;:&quot;&lt;a href=\&quot;http://mobile.twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Mobile Web&lt;/a&gt;&quot;,&quot;location&quot;:null,&quot;date&quot;:&quot;Wed Jun 13 12:42:55 +0000 2012&quot;,&quot;source&quot;:&quot;https://twitter.com/orensakure/status/212887775677124609&quot;,&quot;text&quot;:&quot;Benzema: Mourinho speaks to me like a father to his son http://t.co/hZLjWCHO&quot;,&quot;description&quot;:null,&quot;keywords&quot;:&quot;&quot;,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:0,&quot;dislikes&quot;:null,&quot;favorites&quot;:0,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:{&quot;name&quot;:&quot;orensakure&quot;,&quot;real_name&quot;:&quot;Jeffery Nava&quot;,&quot;id&quot;:&quot;464237294&quot;,&quot;language&quot;:&quot;en&quot;,&quot;utc&quot;:&quot;Chihuahua + -25200&quot;,&quot;geo&quot;:null,&quot;description&quot;:&quot;My function in the universe is to analyze complex systems. Then destroy them.&quot;,&quot;avatar&quot;:&quot;https://si0.twimg.com/profile_images/1755485075/406_normal.gif&quot;,&quot;location&quot;:&quot;Boston&quot;,&quot;subscribers&quot;:82,&quot;subscriptions&quot;:88,&quot;postings&quot;:1447,&quot;profile&quot;:&quot;https://twitter.com/#!/orensakure&quot;,&quot;website&quot;:null},&quot;links&quot;:[{&quot;service&quot;:null,&quot;title&quot;:null,&quot;thumbnail&quot;:null,&quot;href&quot;:&quot;http://t.co/hZLjWCHO&quot;}],&quot;to_users&quot;:[]}</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:&quot;212887775261900800&quot;,&quot;geo&quot;:null,&quot;application&quot;:&quot;&lt;a href=\&quot;http://twitter.com/#!/download/iphone\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for iPhone&lt;/a&gt;&quot;,&quot;location&quot;:null,&quot;date&quot;:&quot;Wed Jun 13 12:42:55 +0000 2012&quot;,&quot;source&quot;:&quot;https://twitter.com/billalmaoberry/status/212887775261900800&quot;,&quot;text&quot;:&quot;RT @RealestKidEver: I`m sorry, you are a slut&quot;,&quot;description&quot;:null,&quot;keywords&quot;:&quot;&quot;,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:88,&quot;dislikes&quot;:null,&quot;favorites&quot;:13,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:{&quot;name&quot;:&quot;billalmaoberry&quot;,&quot;real_name&quot;:&quot;Azayel Drew Ivashkov&quot;,&quot;id&quot;:&quot;182090280&quot;,&quot;language&quot;:&quot;en&quot;,&quot;utc&quot;:&quot;Quito + -18000&quot;,&quot;geo&quot;:null,&quot;description&quot;:&quot;tumblr twitter facebook youtube~ thats what i do all day long and fan girling      and i struggle to focus on my studies         \\(^•^)/&quot;,&quot;avatar&quot;:&quot;https://si0.twimg.com/profile_images/2250782132/image_normal.jpg&quot;,&quot;location&quot;:&quot;my house :)&quot;,&quot;subscribers&quot;:20,&quot;subscriptions&quot;:290,&quot;postings&quot;:1912,&quot;profile&quot;:&quot;https://twitter.com/#!/billalmaoberry&quot;,&quot;website&quot;:&quot;http://www.blueberry-love-cake.tumblr.com&quot;},&quot;links&quot;:[],&quot;to_users&quot;:[{&quot;name&quot;:&quot;RealestKidEver&quot;,&quot;id&quot;:&quot;206388720&quot;,&quot;service&quot;:&quot;mention&quot;,&quot;title&quot;:null,&quot;thumbnail&quot;:null,&quot;href&quot;:null}]}</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>{&quot;service&quot;:&quot;Twitter&quot;,&quot;id&quot;:&quot;212887775236730880&quot;,&quot;geo&quot;:null,&quot;application&quot;:&quot;&lt;a href=\&quot;http://blackberry.com/twitter\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for BlackBerry®&lt;/a&gt;&quot;,&quot;location&quot;:null,&quot;date&quot;:&quot;Wed Jun 13 12:42:55 +0000 2012&quot;,&quot;source&quot;:&quot;https://twitter.com/SrForeman/status/212887775236730880&quot;,&quot;text&quot;:&quot;RT @PintorcitoBaez: Estamos pensando dividirnos, mandar a un grupo a Sur, con los de la \&quot;barra\&quot; de Nacional! Total igual gritamos todos  ...&quot;,&quot;description&quot;:null,&quot;keywords&quot;:&quot;&quot;,&quot;category&quot;:null,&quot;duration&quot;:null,&quot;likes&quot;:3,&quot;dislikes&quot;:null,&quot;favorites&quot;:59,&quot;comments&quot;:null,&quot;rates&quot;:null,&quot;rating&quot;:null,&quot;min_rating&quot;:null,&quot;max_rating&quot;:null,&quot;user&quot;:{&quot;name&quot;:&quot;SrForeman&quot;,&quot;real_name&quot;:&quot;Santi Lopez&quot;,&quot;id&quot;:&quot;242526374&quot;,&quot;language&quot;:&quot;es&quot;,&quot;utc&quot;:&quot;Buenos Aires + -10800&quot;,&quot;geo&quot;:null,&quot;description&quot;:&quot;Fotógrafo - Hijo de Dios, Sarcástico - Amante de la música Electrónica - DJ. Olimpista...\r    PD: no todo lo que tuiteo es cierto..\r    El UF es gratis..\r  &quot;,&quot;avatar&quot;:&quot;https://si0.twimg.com/profile_images/2303531396/DSC_02411_normal.JPG&quot;,&quot;location&quot;:&quot;&quot;,&quot;subscribers&quot;:2051,&quot;subscriptions&quot;:1162,&quot;postings&quot;:33123,&quot;profile&quot;:&quot;https://twitter.com/#!/SrForeman&quot;,&quot;website&quot;:&quot;https://www.facebook.com/santiagolopezfranco&quot;},&quot;links&quot;:[],&quot;to_users&quot;:[{&quot;name&quot;:&quot;PintorcitoBaez&quot;,&quot;id&quot;:&quot;528068291&quot;,&quot;service&quot;:&quot;mention&quot;,&quot;title&quot;:null,&quot;thumbnail&quot;:null,&quot;href&quot;:null}]}</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+
+	<span class='kw'>return</span> <span class='ivar'>@phrase</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Aug 21 23:24:09 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

@@ -20,7 +20,9 @@
 							<%= submit_tag "Buscar", :name => nil %>
 						</fieldset>
 					<% end %>
-					
+					<% if @error != nil %>
+						<p class="red"><%= @error %>
+					<% end %> 
 
 				</div>
 				<p class="noFloat">Consulta tu influencia, ¿cuán influyente eres?</p>

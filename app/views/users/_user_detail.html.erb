@@ -1,5 +1,5 @@
 	<h2>Usuario:	<%=	user.name %></h2>
-	<div class="usuario">
+	<div class="detail">
 		<p class="profile">Nombre: <span class="bold"><%= user.real_name %></span></p>
 		<p class="profile"><%= link_to "Última influencia:", influence_path(influence) %> 
 			<span class="green bold"><%= format("%.2f", (influence.velocity*100)) %></span></p>

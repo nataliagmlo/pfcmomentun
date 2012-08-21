@@ -1,11 +1,17 @@
-
 require 'pg'
 require 'json'
+
 require_relative '../business/momentum'
 require_relative '../../app/models/user'
 
+# @author Natalia Garcia Menendez
+# @version 1.0
+#
+#Class responsible for parsing the message format USMF to model objects, and then run the algorithm Momentum
 class USMFParser
 
+	# Method that creates a user with the data received in a hash table
+	# @param user [Hash Table] User data to create
 	def parse_tweet_creator user
 		u = User.find_or_create_by_user_id user["id"]
 
@@ -25,6 +31,9 @@ class USMFParser
 		u.save
 	end
 
+	# Method that creates users with data received in a hash table, stores them in an array and sends them to the algorithm
+	# @param users [Array, Hash Table] User data mentioned
+	# @param date_tweet [string] Menssage date 
 	def parse_users_mentions users, date_tweet
 		users_mentions = []
 		users.each do |item|
@@ -39,6 +48,8 @@ class USMFParser
 			m.calculate_influences users_mentions, date_tweet
 	end
 
+	# Method that parses the data with JSON
+	# @param msg [USMF] message recieved a social network
 	def parser msg
 
 		status = JSON.parse(msg)

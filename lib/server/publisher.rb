@@ -3,9 +3,9 @@ require 'redis'
 require 'json'
 require_relative './PhraseGenerator'
 
- 
-#arrancar con publisher.rb
- 
+# @author Natalia Garcia Menendez
+# @version 1.0
+# Part of code that publishes messages to the pub / sub redis
 redis = Redis.new
 data = {"user" => 'pepito'}
 

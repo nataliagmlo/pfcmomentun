@@ -1,22 +1,35 @@
+# @author Natalia Garcia Menendez
+# @version 1.0
+#
+# Class that is responsible for receiving requests for the "home"
 class HomeController < ApplicationController
 
+	# Method that controls the actions that are intended to index
 	def index
-		
 		calculate_list()
 	end
 
+	# Method that controls the actions that are intended to show
 	def show
 		@user = nil
-		@user = User.name_like params["search"]
-		@user = @user.first
-	    if @user!=nil
-	      redirect_to user_path(@user)
-	    else
-	    	calculate_list()
-	      render :action => :index
-	    end
+		if params["search"] != ""
+			@user = User.name_like params["search"]
+			@user = @user.first
+		    if @user!=nil
+		      redirect_to user_path(@user)
+		    else
+		    	calculate_list()
+		    	@error = "El usuario " + params["search"] + " no exite"
+		      	render :action => :index
+		    end
+		else
+			calculate_list()
+		    @error = "Debes introducir un nombre de usuario"
+		    render :action => :index
+		end
 	end
 
+	# Helper method to load all variables relevant listings
 	def calculate_list
 		influences_top = Influence.influential_users()
 		@top_influences = calculate_users_list(influences_top)
@@ -30,6 +43,7 @@ class HomeController < ApplicationController
 		@user = params[:name]
 	end
 
+	# Helper method to calculate the 10 most influential users
 	def calculate_users_list influences
 		users_list = []
 		top = 0
@@ -44,6 +58,7 @@ class HomeController < ApplicationController
 		users_list
 	end
 
+	# Helper method to check whether a user is in an array of users
 	def user_in top, user, users
 		i = 0
 		while i < top
