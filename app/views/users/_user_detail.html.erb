@@ -1,12 +1,16 @@
-	<h2>Usuario:	<%=	user.name %></h2>
+	<h2 class="noFloat">Usuario:	<%=	user.name %></h2>
 	<div class="detail">
-		<p class="profile">Nombre: <span class="bold"><%= user.real_name %></span></p>
+		<% if compare %>
+			<p class="profile">Nombre: <span class="bold"><%= link_to user.real_name , user_path(user) %></span></p>
+		<% else %>
+			<p class="profile">Nombre: <span class="bold"><%= user.real_name %></span></p>
+		<% end %>
 		<p class="profile"><%= link_to "Última influencia:", influence_path(influence) %> 
 			<span class="green bold"><%= format("%.2f", (influence.velocity*100)) %></span></p>
 		<p class="profile">Followers: <span class="bold"><%= user.subscribers %></span></p>
 		<p class="profile">Following: <span class="bold"><%= user.subscriptions %></span></p>
-		<p class="profile">Avatar: <img src="<%= @user.avatar %>" alt="Avatar"/></p>
-		<p class="profile mention">Última mención: <span class="bold"><%= user.last_mention_at %></span></p>
+		<p class="profile">Avatar: <img src="<%= user.avatar %>" alt="Avatar"/></p>
+		<p class="profile mention">Última mención: <span class="bold"><%= user.last_mention_at.strftime("%d/%m/%y %H:%M") %></span></p>
 		<p class="profile desc">Descripción: <span class="bold"><%= user.description %></span></p>
 	</div>
 

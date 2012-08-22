@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   # @param name [string] user name searched
   # @return [Array,User] User that meet the condition
   scope :name_like, lambda { |name| 
-    {:conditions => ["lower(name) = ?", name.downcase]}
+    {:conditions => ["lower(name) = ? and subscribers >0", name.downcase]}
   }
 
   # Helper method that searches for the last existing user influence

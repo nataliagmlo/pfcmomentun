@@ -1,5 +1,5 @@
 
-	<%= render :partial => "user_detail", :locals => {:user => @user, :influence =>@influence} %>
+	<%= render :partial => "user_detail", :locals => {:user => @user, :influence =>@influence, :compare => @compare} %>
 
 
 	<% puntos = "" %>
@@ -21,12 +21,15 @@
 	<% end %>
 	<div class="columns2 momentum">
 		<p>¿Te apetece comparar tus datos con otro usuario?<br/>Introduce su nombre</p>
-		<%= form_tag users_path, :method => 'get' do %>
+		<%= form_tag user_compare_path(@user.id), :method => 'get' do %>
 			<fieldset>
 				<%= label_tag :compare_to, "usuario"%>
 				<%= text_field_tag :compare_to, params[:compare_to] %>
 				<%= submit_tag "Buscar", :name => nil %>
 			</fieldset>
 		<% end %>
+		<% if @errorCompare != nil %>
+			<p class="red"><%= @errorCompare %>
+		<% end %> 
 	</div>
 	

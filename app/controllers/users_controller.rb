@@ -4,31 +4,63 @@
 # Class that is responsible for receiving requests for the "user"
 class UsersController < ApplicationController
 
-	# Method that controls the actions that are intended to index
-	def index
-		@user1 = User.find params["id1"]
-		@influence1 = @user1.previous_influence
-	  	@influences1 = @user1.influences 
-
-		@user2 = User.find params["id2"]
-		@influence2 = @user2.previous_influence
-	  	@influences2 = @user2.influences 
-	  	
-	  	merge_influences = @influences1 + @influences2
-	  	@dates = dates_for_axis(merge_influences)
-	  	@axis_y_values = axis_values(merge_influences)
-	  	@axis_y_labels = axis_labels(@axis_y_values)
-	end
 
 	# Method that controls the actions that are intended to show
 	def show
-	  	@user = User.find params["id"]
-	  	@influence = @user.previous_influence
-	  	@influences = @user.influences 
+		@compare = false
+	  	calculate_detail_user(params["id"])
+	end
 
-	  	@dates = dates_for_axis(@influences)
+	# Method that controls the actions that are intended to compare
+	def compare
+		@compare = false
+		if params["compare_to"] != ""
+			@user2 = (User.name_like params["compare_to"]).first
+
+			if @user2 != nil
+
+				@compare = true
+
+				@user1 = User.find params["user_id"]
+				@influence1 = @user1.previous_influence
+			  	@influences1 = @user1.influences 
+				
+				@influence2 = @user2.previous_influence
+			  	@influences2 = @user2.influences 
+			  	
+			  	dates_values = dates_for_axis(@influences1)
+			  	@dates1 = dates_label_axis(dates_values)
+			  	dates_values = dates_for_axis(@influences2)
+			  	@dates2 = dates_label_axis(dates_values)
+
+
+			  	merge_influences = @influences1 + @influences2
+			  	@axis_y_values = axis_values(merge_influences)
+			  	@axis_y_labels = axis_labels(@axis_y_values)
+			else
+				calculate_detail_user(params["user_id"])
+				@errorCompare = "El usuario '" + params["compare_to"] + "' no existe"
+				render :action => :show
+			end
+		else 
+			calculate_detail_user(params["user_id"])
+			@errorCompare = "Debes introducir un nombre de usuario"
+		    render :action => :show
+		end
+	end
+
+
+	# Helper method to find the details of the user with the received id
+	def calculate_detail_user ident
+		@user = User.find ident
+	  	@influence = @user.previous_influence
+	  	@influences = @user.influences
+
+	  	dates_values = dates_for_axis(@influences)
+	  	@dates = dates_label_axis(dates_values)
 	  	@axis_y_values = axis_values(@influences)
 	  	@axis_y_labels = axis_labels(@axis_y_values)
+
 	end
 
 	# Helper method to calculate the name of axis labels "y"
@@ -66,7 +98,7 @@ class UsersController < ApplicationController
 		v
 	end
 
-	# Helper method to calculate the name of axis labels "x"
+	# Helper method to calculate the value of axis labels "x"
 	def dates_for_axis influences
 		min = influences[0].date
 		max = influences[0].date
@@ -83,14 +115,26 @@ class UsersController < ApplicationController
 
 		media = min + hours.hour
 
+		dates = []
 
+		dates << min 
+		dates << media
+		dates << max
+
+		dates
+	end
+
+
+	# Helper method to calculate the name of axis labels "x"
+	def dates_label_axis dates
+		hours = ((dates[2] - dates[0])/3600)/3
 		d = ""
-		size = influences.size
-		d += "|" + min.strftime("%d %b %H:%M")
-		d += "|" + media.strftime("%d %b %H:%M")
-		d += "|" + (media + hours.hour).strftime("%d %b %H:%M")
-		d += "|" + max.strftime("%d %b %H:%M")
+		d += "|" + dates[0].strftime("%d/%m/%y %H:%M")
+		d += "|" + dates[1].strftime("%d/%m/%y %H:%M")
+		d += "|" + (dates[1] + hours.hour).strftime("%d/%m/%y %H:%M")
+		d += "|" + dates[2].strftime("%d/%m/%y %H:%M")
 		d
+
 	end
 
 end

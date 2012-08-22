@@ -3,6 +3,11 @@ Momentun::Application.routes.draw do
   resources '', :controller => "home"
   resources :users, :influences
 
+  resources :users do
+    get :compare
+  end
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

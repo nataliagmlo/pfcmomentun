@@ -1,0 +1,41 @@
+
+	
+	<%= render :partial => "user_detail", :locals => {:user => @user1, :influence =>@influence1, :compare => @compare} %>
+
+	<%= render :partial => "user_detail", :locals => {:user => @user2, :influence =>@influence2, :compare => @compare} %>
+	
+	<% puntos ="" %>
+	<% pos = 1 %>
+	<% tam1 = @influences1.size %>
+	<% @influences1.each do |influence| %>
+		<% puntos += format("%.2f", (influence.velocity*100)).to_s %>
+		<% if pos < tam1 %>
+			<% puntos += "," %>
+			<% pos += 1 %>
+		<% end %>
+	<% end %>
+	<% puntos2 ="" %>
+	<% pos = 1 %>
+	<% tam2 = @influences2.size %>
+	<% @influences2.each do |influence| %>
+		<% puntos2 += format("%.2f", (influence.velocity*100)).to_s %>
+		<% if pos < tam2 %>
+			<% puntos2 += "," %>
+			<% pos += 1 %>
+		<% end %>
+	<% end %>
+	<h2 class="noFloat">Comparativa de la evolución</h2>
+
+	<% if tam1 > 1 %>
+		<% dir1 = "http://chart.apis.google.com/chart?cht=lc&chco=ff0000&chs=570x300&chd=t:"+ puntos + "&chds=" + @axis_y_values[0] +","+ @axis_y_values[1] + "&chdl="+ @user1.name + "&chma=20,20,20,30|80,20&chxt=x,y&chxl=0:"+ @dates1 + "|1:" + @axis_y_labels + "&chf=c,lg,0,FFE7C6,0,76A4FB,1|bg,s,EFEFEF&chtt=Evolución de la influencia " + @user1.name %>
+		<img class="columns2" src="<%= dir1 %>" alt="Evolución de las influencias datos: usuario <%= @user1.name %>: <%= puntos %>"/>
+	<% else %>
+		<p class="information">No está disponible la evolución de la influencia de <%= @user1.name %>, ya que tan śolo tiene un valor. <br/>Inlfuencia = <%= puntos %> Fecha: <%= @influences1[0].date.strftime("%d %b %H:%M") %></p>
+	<% end %>
+
+	<% if tam2 > 1 %>
+		<% dir2 = "http://chart.apis.google.com/chart?cht=lc&chco=000000&chs=570x300&chd=t:"+ puntos2 + "&chds=" + @axis_y_values[0] +","+ @axis_y_values[1] + "&chdl="+ @user2.name + "&chma=20,20,20,30|80,20&chxt=x,y&chxl=0:"+ @dates2 + "|1:" + @axis_y_labels + "&chf=c,lg,0,FFE7C6,0,76A4FB,1|bg,s,EFEFEF&chtt=Evolución de la influencia " + @user2.name %>
+		<img class="columns2" src="<%= dir2 %>" alt="Evolución de las influencias datos: usuario <%= @user2.name %>: <%= puntos2 %>"/>
+	<% else %>
+		<p class="information">No está disponible la evolución de la influencia de <%= @user2.name %>, ya que tan śolo tiene un valor. <br/>Inlfuencia = <%= puntos2 %> Fecha: <%= @influences2[0].date.strftime("%d %b %H:%M") %></p>
+	<% end %>

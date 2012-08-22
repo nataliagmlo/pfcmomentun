@@ -19,7 +19,7 @@ class HomeController < ApplicationController
 		      redirect_to user_path(@user)
 		    else
 		    	calculate_list()
-		    	@error = "El usuario " + params["search"] + " no exite"
+		    	@error = "El usuario '" + params["search"] + "' no existe"
 		      	render :action => :index
 		    end
 		else

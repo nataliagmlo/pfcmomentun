@@ -391,7 +391,7 @@ User that meet the condition
       <pre class="code"><span class="info file"># File 'app/models/user.rb', line 13</span>
 
 <span class='id identifier rubyid_scope'>scope</span> <span class='symbol'>:name_like</span><span class='comma'>,</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='op'>|</span> 
-  <span class='lbrace'>{</span><span class='symbol'>:conditions</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>lower(name) = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+  <span class='lbrace'>{</span><span class='symbol'>:conditions</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>lower(name) = ? and subscribers &gt;0</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
 <span class='rbrace'>}</span></pre>
     </td>
   </tr>
@@ -503,7 +503,7 @@ Method for converting an Influence on string
 </div>
 
     <div id="footer">
-  Generated on Tue Aug 21 23:24:09 2012 by
+  Generated on Wed Aug 22 13:20:22 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.2.1 (ruby-1.9.2).
 </div>
