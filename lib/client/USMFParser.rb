@@ -52,22 +52,24 @@ class USMFParser
 	# @param msg [USMF] message recieved a social network
 	def parser msg
 
-		status = JSON.parse(msg)
-		if status.has_key? 'Error'
-			raise "status malformed"
-		end
-		
-		unless status["user"] == nil
-			puts "id tweet " + status["id"] 
-			
-			parse_tweet_creator status["user"]
+		if msg != "null"
 
-			users = status["to_users"]
-			unless users == nil
-				parse_users_mentions users, status["date"]
+			status = JSON.parse(msg)
+			if status.has_key? 'Error'
+				raise "status malformed"
 			end
 			
-		end
+			unless status["user"] == nil
+				puts "id tweet " + status["id"] 
+				
+				parse_tweet_creator status["user"]
 
+				users = status["to_users"]
+				unless users == nil
+					parse_users_mentions users, status["date"]
+				end
+				
+			end
+		end
 	end
 end
