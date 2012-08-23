@@ -27,7 +27,6 @@ class Client
       http.callback do
         puts "#{Time.now.strftime('%H:%M:%S')} : Connected to server"
       end
-     
       http.stream do |msg|
         parser.parser msg
 

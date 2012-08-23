@@ -65,7 +65,7 @@ class USMFParser
 				parse_tweet_creator status["user"]
 
 				users = status["to_users"]
-				unless users == nil
+				unless users == nil or users.size == 0
 					parse_users_mentions users, status["date"]
 				end
 				
